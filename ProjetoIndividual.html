@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jesus vive</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!--GOOGLE FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <!--GOOGLE FONT-->
+
+
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+
+            <div class="flex">
+
+                <a href="index.html">Logo</a>
+
+                <nav>
+                    <ul>
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="..\teste\histórias.html">HISTÓRIAS</a></li>
+                        <li><a href="#">MENSAGENS</a></li>
+                    </ul>
+                </nav>
+
+                <div class="btn-entrar">
+                    <a href="..\teste\telaLogin.html"><button>ENTRAR</button></a>
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+
+    <section class="banner">
+            <div class="flex">
+                <div class="txt-topo-site">
+                    <h1>
+                        Jesus<br>
+                        vive.
+                    </h1>
+                    <div class="btn-sobre-nos">
+                        <a onclick="scrollToSection(867)">
+                            <button>Sobre nós</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="Quem-somos" id="sobreNós">
+        <section class="quem-somos">
+            <div class="txt-quem-somos-titulo">
+                <h2>Quem somos?</h2>
+            </div>
+                <div class="flex">
+                    <div class="img-quem-somos">
+                        <img src="https://istoe.com.br/wp-content/uploads/2021/05/ceia-2-1280x720-1.jpg?x26443" alt="imagem 1">
+                    </div>
+                    <div class="txt-quem-somos">
+                        <p>
+                            Bem-vindo ao nosso site! Somos um grupo de pessoas comprometidas em compartilhar a vida, a obra e o legado de Jesus, a figura central do Cristianismo. 
+                            Nosso objetivo é trazer a você um conhecimento mais profundo sobre quem Jesus era, o que Ele fez e como Sua mensagem transformou o mundo.
+                            Aqui, você encontrará detalhes sobre a vida de Jesus, seus ensinamentos e milagres, conforme descritos nos Evangelhos do Novo Testamento. 
+                            Abordaremos também o significado da sua crucificação e ressurreição, bem como a influência duradoura que Ele tem na fé cristã e na cultura ao redor do mundo.
+                            Esperamos que este espaço seja uma fonte de inspiração e aprendizado para todos que desejam conhecer mais sobre Jesus e seu papel na história da humanidade. 
+                            Junte-se a nós para explorar a vida e a missão de Jesus Cristo, e descubra como sua mensagem de amor, perdão e esperança continua a ressoar nos dias de hoje.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section id="contact">
+        <div class="wrapper">
+          <div class="info"> 
+            <h2 class="txt-contato-titulo">Posso te falar de Jesus?</h2> 
+            <div class="info-field">
+              <h4>Email</h4>
+              <p>jesusteama@contact.com</p>
+            </div>
+            <div class="info-field">
+              <h4>Telefone</h4>
+              <p>+55 11 9 8159 3730</p>
+            </div>
+            <div class="info-field">
+              <h4>Endereço</h4>
+              <p>Rua Haddock Lobo, 193 - Cerqueira Cesar<br /> 
+                São Paulo - SP, Brasil</p>
+            </div>     
+          </div>
+          <div class="form">
+          <div class="form-field">
+            <label for="name">Nome completo</label>  
+            <input type="text" class="form-input" placeholder="Digite seu nome completo">  
+          </div>
+          <div class="form-field">   
+            <label for="email">Email</label>
+            <input type="email" class="form-input" placeholder="Digite seu email">    
+          </div>
+          <div class="form-field">  
+            <label for="tel">Telefone</label>    
+            <input type="tel" class="form-input" placeholder="Digite seu telefone">   
+          </div>
+          <div class="form-field">
+            <label for="message">Mensagem</label>     
+            <textarea name="message" cols="30" rows="10" placeholder="Digite sua mensagem" class="message"></textarea>
+          </div>
+          <a href="#" class="btn-form">Enviar</a>
+        </div>
+      </div>
+      </section>
+
+
+       <footer>
+        <!-- Linha decorativa -->
+        <div class="footer-section">
+            &copy; 2024 Meu Site. Todos os direitos reservados.
+        </div>
+
+        <!-- Links úteis -->
+        <div class="footer-section">
+            <a href="#privacidade">Política de Privacidade</a> |
+            <a href="#termos">Termos de Uso</a> |
+            <a href="#contato">Contato</a>
+        </div>
+    </footer>
+
+
+</body>
+</html>
+
+<script>
+    window.addEventListener("scroll", function (){
+        let header = document.querySelector('#header')
+        header.classList.toggle('rolagem', window.scrollY > 550)
+    })
+
+    function scrollToSection(to) {
+  window.scrollTo(0, to);
+};
+
+</script>
