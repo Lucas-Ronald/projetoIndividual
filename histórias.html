@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historias</title>
+    <link rel="stylesheet" href="styleHistórias.css">
+</head>
+<body>
+
+    <header id="header">
+        <div class="container">
+
+            <div class="flex">
+
+                <a href="index.html">Logo</a>
+
+                <nav>
+                    <ul>
+                        <li><a href="..\teste\ProjetoIndividual.html">HOME</a></li>
+                        <li><a href="#">HISTÓRIAS</a></li>
+                        <li><a href="#">MENSAGENS</a></li>
+                    </ul>
+                </nav>
+
+                <div class="btn-entrar">
+                    <a href="..\teste\telaLogin.html"><button>ENTRAR</button></a>
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+
+    <div class="slider">
+
+        <div class="list">
+
+            <div class="item">
+                <img src="https://folhadolitoral.com.br/wp-content/uploads/2021/12/nhu0kce.jpg" alt="">
+
+                <div class="content">
+                    <div class="tittle">NASCIMENTO DE</div>
+                    <div class="type">JESUS</div>
+                    <div class="description">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae dicta repellat tenetur suscipit, similique ipsum a ab officiis distinctio assumenda laboriosam molestiae laborum quisquam hic impedit dolores delectus. Amet, illo.
+                    </div>
+                    <div class="button">
+                        <button>Ver Mais</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="https://www.palavrabiblica.net/wp-content/uploads/2021/12/The-baptism-of-Jesus-Gospel-images.jpg" alt="">
+
+                <div class="content">
+                    <div class="tittle">BATISMO DE</div>
+                    <div class="type">JESUS</div>
+                    <div class="description">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae dicta repellat tenetur suscipit, similique ipsum a ab officiis distinctio assumenda laboriosam molestiae laborum quisquam hic impedit dolores delectus. Amet, illo.
+                    </div>
+                    <div class="button">
+                        <button>Ver Mais</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="https://www.ihu.unisinos.br/images/ihu/2018/02/jesus_deserto_tentacao.jpg" alt="">
+
+                <div class="content">
+                    <div class="tittle">TENTAÇÃO NO</div>
+                    <div class="type">DESERTO</div>
+                    <div class="description">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae dicta repellat tenetur suscipit, similique ipsum a ab officiis distinctio assumenda laboriosam molestiae laborum quisquam hic impedit dolores delectus. Amet, illo.
+                    </div>
+                    <div class="button">
+                        <button>Ver Mais</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="https://curiosamente.diariodepernambuco.com.br/wp-content/uploads/2017/08/jesus-paes-peixes-giovanni-lanfranco.jpg" alt="">
+
+                <div class="content">
+                    <div class="tittle">MULTIPLICAÇÃO DE</div>
+                    <div class="type">PÃES</div>
+                    <div class="description">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae dicta repellat tenetur suscipit, similique ipsum a ab officiis distinctio assumenda laboriosam molestiae laborum quisquam hic impedit dolores delectus. Amet, illo.
+                    </div>
+                    <div class="button">
+                        <button>Ver Mais</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://img.freepik.com/fotos-premium/jesus-anda-sobre-a-agua-jesus-anda-sobre-o-mar-belo-por-do-sol-generative-ai_888418-402.jpg" alt="">
+
+                <div class="content">
+                    <div class="tittle">JESUS ANDA</div>
+                    <div class="type">SOBRE AS ÁGUAS</div>
+                    <div class="description">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae dicta repellat tenetur suscipit, similique ipsum a ab officiis distinctio assumenda laboriosam molestiae laborum quisquam hic impedit dolores delectus. Amet, illo.
+                    </div>
+                    <div class="button">
+                        <button>Ver Mais</button>
+                    </div>
+                </div>
+            </div>
+
+            
+            
+        </div>
+
+
+        <div class="thumbnail">
+            <div class="item">
+                <img src="https://folhadolitoral.com.br/wp-content/uploads/2021/12/nhu0kce.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="https://www.palavrabiblica.net/wp-content/uploads/2021/12/The-baptism-of-Jesus-Gospel-images.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="https://www.ihu.unisinos.br/images/ihu/2018/02/jesus_deserto_tentacao.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="https://curiosamente.diariodepernambuco.com.br/wp-content/uploads/2017/08/jesus-paes-peixes-giovanni-lanfranco.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="https://img.freepik.com/fotos-premium/jesus-anda-sobre-a-agua-jesus-anda-sobre-o-mar-belo-por-do-sol-generative-ai_888418-402.jpg" alt="">
+            </div>
+
+        </div>
+
+        <div class="nextPrevArrows">
+            <button class="prev"><</button>
+            <button class="next">></button>
+        </div>
+
+
+    </div>
+</body>
+</html>
+
+<script>
+    let nextBtn = document.querySelector('.next')
+    let prevBtn = document.querySelector('.prev')
+
+    let slider = document.querySelector('.slider')
+    let sliderList = slider.querySelector('.slider .list')
+    let thumbnail = document.querySelector('.thumbnail')
+    let thumbnailItems = thumbnail.querySelectorAll('.item')
+
+    thumbnail.appendChild(thumbnailItems[0])
+
+    // FUNÇÃO DO BOTÃO NEXT
+    nextBtn.onclick = function() {
+        moveSlider('next')
+    }
+
+    // FUNÇÃO DO BOTÃO PREV
+        prevBtn.onclick = function() {
+        moveSlider('prev')
+    }
+
+
+    function moveSlider(direction) {
+        let sliderItems = sliderList.querySelectorAll('.item')
+        let thumbnailItems = document.querySelectorAll('.thumbnail .item')
+        
+        if(direction === 'next'){
+            sliderList.appendChild(sliderItems[0])
+            thumbnail.appendChild(thumbnailItems[0])
+            slider.classList.add('next')
+        } else {
+            sliderList.prepend(sliderItems[sliderItems.length - 1])
+            thumbnail.prepend(thumbnailItems[thumbnailItems.length - 1])
+            slider.classList.add('prev')
+        }
+
+        slider.addEventListener('animationend', function() {
+            if(direction === 'next'){
+                slider.classList.remove('next')
+            } else {
+                slide.classList.remove('prev')
+            }
+         }, {once: true}) // remove the event listener after it's triggered once
+    }
+    
+</script>
