@@ -1,0 +1,224 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Fira Mono", monospace;
+    font-weight: 400;
+}
+
+  
+  .container {
+    max-width: 1280px;
+    margin: auto;
+  }
+  
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+header {
+    width: 100%;
+    padding: 60px 4%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 0.7s;
+    /* background-color: #5f4336fd; */
+  }
+  
+  /* header i{
+      font-size: 30px;
+      color: rgb(0, 0, 0);
+  } */
+  
+  header ul {
+    list-style-type: none;
+  }
+  
+  header ul li {
+    display: inline-block;
+    margin: 0 40px;
+  }
+  
+  header ul li a {
+    color: #0000006b;
+    text-decoration: none;
+  }
+  
+  header a {
+      color: #ffffff;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.1s;
+      text-shadow: none;
+  
+    }
+  
+  header a:hover {
+      color: #ffffff;
+      transform: scale(1.05);
+      text-shadow: 3px 3px 4px rgba(0, 0, 0, 10);
+    }
+  
+  header .btn-entrar button {
+    background-color: #423129; 
+    color: #fff; /* Texto branco para contraste */
+    border: 1;
+    border-color: white;
+    padding: 10px 20px;
+    font-size: 16px; /* Tamanho da fonte */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor em formato de mão */
+    transition: all 0.3s ease; /* Transição suave */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 1); /* Sombra mais pronunciada */
+  }
+  
+  header .btn-entrar button:hover {
+    box-shadow: 0px 0px 8px #423129;
+  }
+/* LOGIN E CADASTRO */
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("https://pensandobiblia.blog.br/wp-content/uploads/2023/07/Como-morreram-os-apostolos-de-Jesus-Cristo-scaled.webp");
+}
+
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    background: #fffffff1;
+    box-shadow: 0 0 50px #5f4336;
+    border-radius: 20px;
+    padding: 40px;
+    overflow: hidden;
+}
+
+/* .wrapper:hover{
+    animation: animate 1s linear infinite;
+}
+
+@keyframes  animate{
+    100%{
+        filter: hue-rotate(360deg);
+    }
+} */
+
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: 1s ease-in-out;
+}
+
+.wrapper.active .form-wrapper.entrar {
+    transform: translateY(-450px)
+}
+
+.wrapper .form-wrapper.registrar{
+    position: absolute;
+    top: 450px;
+    left: 0;
+
+}
+
+.wrapper.active .form-wrapper.registrar {
+    transform: translateY(-450px)
+}
+
+h2{
+    font-size: 30px;
+    color: #5f4336;
+    text-align: center;
+}
+
+.input-group{
+    position: relative;
+    margin: 30px 0;
+    border-bottom: 2px solid #5f4336;
+}
+
+.input-group label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #5f4336;
+    pointer-events: none;
+}
+
+.input-group input{
+    width: 320px;
+    height: 40px;
+    font-size: 16px;
+    color: #5f4336;
+    padding: 0 5px;
+    background: transparent;
+    border: none;
+    outline: none;
+    transition: .5s;
+}
+
+.input-group input:focus~label,
+.input-group input:valid~label{
+    top: -5px;
+}
+
+.remember{
+    margin: -5px 0 15px 5px;
+}
+
+.remember label{
+    color: #5f4336;
+    font-size: 14px;
+}
+
+.remember label input{
+    accent-color: #5f4336;
+}
+
+button{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background: #5f4336;
+    box-shadow: 0 0 10px #5f4336;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+}
+
+.registrar-link{
+    font-size: 14px;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.registrar-link p{
+    color: 5f4336;
+}
+
+.registrar-link p a{
+    color: #5f4336;
+    text-decoration: none;
+    font-weight: 500;   
+}
+
+.registrar-link p a:hover{
+    text-decoration: underline;
+}
+
+
