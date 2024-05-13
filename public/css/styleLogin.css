@@ -87,6 +87,8 @@ body{
     align-items: center;
     min-height: 100vh;
     background-image: url("https://pensandobiblia.blog.br/wp-content/uploads/2023/07/Como-morreram-os-apostolos-de-Jesus-Cristo-scaled.webp");
+    background-color: #08080879;
+    background-blend-mode: multiply;
 }
 
 .wrapper {
@@ -222,3 +224,16 @@ button{
 }
 
 
+
+/* MENSAGEM DE ERRO */
+.erro{
+    color: red;
+}
+
+.disabled{
+    display: none;
+}
+
+#div_mensagem{
+    margin: 1.2rem 0;
+}

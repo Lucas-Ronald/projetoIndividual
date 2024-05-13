@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jesus vive</title>
+    <link rel="stylesheet" href="./css/styleLogin.css" />
+
+    <!--GOOGLE FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!--GOOGLE FONT-->
+  </head>
+  <body>
+    <header id="header">
+      <div class="container">
+        <div class="flex">
+          <a href="index.html">Logo</a>
+
+          <div class="btn-entrar">
+            <a href="./index.html"><button>VOLTAR</button></a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="wrapper">
+      <div class="form-wrapper entrar">
+        <form action="">
+          <h2>Login</h2>
+          <div class="input-group">
+            <input type="text" required />
+            <label for="">Usuário</label>
+          </div>
+          <div class="input-group">
+            <input type="password" required />
+            <label for="">Senha</label>
+          </div>
+          <div class="remember">
+            <label><input type="checkbox" /> Lembrar-me</label>
+          </div>
+          <button type="submit">Login</button>
+          <div class="registrar-link">
+            <p>
+              Não tem uma conta?<a href="#" class="registrarBtn-link">
+                Registrar-se</a
+              >
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <div class="form-wrapper registrar">
+        <form action="">
+          <h2>Registrar-se</h2>
+          <div id="div_mensagem" style="color: red" class="disabled"></div>
+          <div class="input-group">
+            <input type="text" id="input_usuario" />
+            <label for="">Usuário</label>
+          </div>
+          <div class="input-group">
+            <input id="input_email" />
+            <label for="">Email</label>
+          </div>
+          <div class="input-group">
+            <input type="password" id="input_password" />
+            <label for="">Senha</label>
+          </div>
+          <div class="remember">
+            <label
+              ><input type="checkbox" id="input_termos" /> Concordo com os termos &
+              condições</label
+            >
+          </div>
+          <button onclick="registrar()" type="submit">Registrar-se</button>
+          <div class="registrar-link">
+            <p>
+              já possui uma conta?<a
+                href="#"
+                class="entrarBtn-link"
+                id="entrarBtn"
+              >
+                Entrar</a
+              >
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  const entrarBtnLink = document.querySelector(".entrarBtn-link");
+  const registrarBtnLink = document.querySelector(".registrarBtn-link");
+  const wrapper = document.querySelector(".wrapper");
+
+  registrarBtnLink.addEventListener("click", () => {
+    wrapper.classList.toggle("active");
+  });
+
+  entrarBtnLink.addEventListener("click", () => {
+    wrapper.classList.toggle("active");
+  });
+
+  function registrar() {
+    const usuario = input_usuario.value;
+    const email = input_email.value;
+    const senha = input_password.value;
+    const termos = input_termos.checked;
+
+    if (email == "" || senha == "" || usuario == "") {
+      div_mensagem.classList.remove("disabled");
+      div_mensagem.classList.add("erro");
+      div_mensagem.innerHTML = `<p style='text-align: center;'>Preencha todos os campos</p>`;
+    } else if (senha.length < 6) {
+      div_mensagem.classList.remove("disabled");
+      div_mensagem.classList.add("erro");
+      div_mensagem.innerHTML = `Senha precisa ter no minimo 6 caracteres`;
+    } else if (email.indexOf("@") < 0) {
+      div_mensagem.classList.remove("disabled");
+      div_mensagem.classList.add("erro");
+      div_mensagem.innerHTML = `<p style='text-align: center;'>Email inválido</p>`;
+    } else if (!termos) {
+      div_mensagem.classList.remove("disabled");
+      div_mensagem.classList.add("erro");
+      div_mensagem.innerHTML = `<p style='text-align: center;'>Você deve aceitar os termos</p>`;
+    } else {
+      div_mensagem.classList.add("disabled");
+    }
+  }
+
+  entrarBtn.addEventListener("click", () => {
+    div_mensagem.classList.add("disabled");
+  });
+</script>
