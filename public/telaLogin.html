@@ -31,21 +31,22 @@
       <div class="form-wrapper entrar">
         <form action="">
           <h2>Login</h2>
+          <div id="div_mensagem_login" style="color: red" class="disabled"></div>
           <div class="input-group">
-            <input type="text" required />
+            <input type="text" id="input_usuario_login" />
             <label for="">Usuário</label>
           </div>
           <div class="input-group">
-            <input type="password" required />
+            <input type="password"  id="input_password_login" />
             <label for="">Senha</label>
           </div>
           <div class="remember">
             <label><input type="checkbox" /> Lembrar-me</label>
           </div>
-          <button type="submit">Login</button>
+          <button onclick="logar()" type="submit">Login</button>
           <div class="registrar-link">
             <p>
-              Não tem uma conta?<a href="#" class="registrarBtn-link">
+              Não tem uma conta?<a href="#" class="registrarBtn-link" id="registrarBtn">
                 Registrar-se</a
               >
             </p>
@@ -170,5 +171,22 @@
 
   entrarBtn.addEventListener("click", () => {
     div_mensagem.classList.add("disabled");
+  });
+
+  function logar() {
+    const usuario = input_usuario_login.value;
+    const senha = input_password_login.value;
+
+    if (senha == "" || usuario == "") {
+      div_mensagem_login.classList.remove("disabled");
+      div_mensagem_login.classList.add("erro");
+      div_mensagem_login.innerHTML = `<p style='text-align: center;'>Preencha todos os campos</p>`;
+    } else {
+      div_mensagem_login.classList.add("disabled");
+    }
+  }
+
+    registrarBtn.addEventListener("click", () => {
+      div_mensagem_login.classList.add("disabled");
   });
 </script>
