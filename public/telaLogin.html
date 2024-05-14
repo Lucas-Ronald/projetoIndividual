@@ -130,6 +130,41 @@
       div_mensagem.innerHTML = `<p style='text-align: center;'>Você deve aceitar os termos</p>`;
     } else {
       div_mensagem.classList.add("disabled");
+
+         // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: usuario,
+        emailServer: email,
+        senhaServer: senha
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+
+          div_mensagem.classList.remove("disabled");
+          div_mensagem.classList.add("erro");
+          div_mensagem.innerHTML = `<p style='text-align: center; color: #5f4336'>Cadastro realizado com sucesso!</p>`;
+
+          setTimeout(() => {
+            location.reload()
+          }, "2000");
+
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
     }
   }
 
