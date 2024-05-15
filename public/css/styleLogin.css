@@ -27,33 +27,13 @@ header {
     transition: 0.7s;
     /* background-color: #5f4336fd; */
   }
-  
-  /* header i{
-      font-size: 30px;
-      color: rgb(0, 0, 0);
-  } */
-  
-  header ul {
-    list-style-type: none;
-  }
-  
-  header ul li {
-    display: inline-block;
-    margin: 0 40px;
-  }
-  
-  header ul li a {
-    color: #0000006b;
-    text-decoration: none;
-  }
-  
+   
   header a {
       color: #ffffff;
       text-decoration: none;
       display: inline-block;
       transition: 0.1s;
       text-shadow: none;
-  
     }
   
   header a:hover {
@@ -61,24 +41,17 @@ header {
       transform: scale(1.05);
       text-shadow: 3px 3px 4px rgba(0, 0, 0, 10);
     }
-  
-  header .btn-entrar button {
-    background-color: #423129; 
-    color: #fff; /* Texto branco para contraste */
-    border: 1;
-    border-color: white;
-    padding: 10px 20px;
-    font-size: 16px; /* Tamanho da fonte */
-    border-radius: 5px; /* Bordas arredondadas */
-    cursor: pointer; /* Cursor em formato de mão */
-    transition: all 0.3s ease; /* Transição suave */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 1); /* Sombra mais pronunciada */
-  }
-  
-  header .btn-entrar button:hover {
-    box-shadow: 0px 0px 8px #423129;
-  }
+
+  header i{
+    font-size: 45px;
+    color: #ffffff;
+
+}
+
+header i:hover{
+    font-size: 45px;
+    color: #ffffff;
+}
 /* LOGIN E CADASTRO */
 
 body{
