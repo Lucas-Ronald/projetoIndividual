@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jesus vive</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/styleIndex.css">
 
     <!--GOOGLE FONT-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,13 +20,14 @@
 
             <div class="flex">
 
-                <a href="index.html">Logo</a>
+                <a href="./index.html"><img src="../img/people.png" class="logo-jesus" alt="jesusLogo"></a>
 
                 <nav>
                     <ul>
-                        <li><a href="./index.html">HOME</a></li>
-                        <li><a href="./dashboard/histórias.html">HISTÓRIAS</a></li>
-                        <li><a href="#">MENSAGENS</a></li>
+                        <li><a onclick="scrollToSection(0)">Home</a></li>
+                        <li><a onclick="scrollToSection(1814)">Sobre Nós</a></li>
+                        <li><a onclick="scrollToSection(3749)">Mensagem</a></li>
+                        <li><a href="./dashboard/históriasBloqueada.html">História</a></li>
                     </ul>
                 </nav>
 
@@ -47,7 +48,7 @@
                         vive.
                     </h1>
                     <div class="btn-sobre-nos">
-                        <a onclick="scrollToSection(867)">
+                        <a onclick="scrollToSection(1814)">
                             <button>Sobre nós</button>
                         </a>
                     </div>
@@ -56,6 +57,31 @@
         </div>
     </section>
 
+    <div class="Quem-foi-jesus" id="QuemFoiJesus">
+        <section class="Quem-foi-Jesus">
+            <div class="txt-quem-foi-jesus-titulo">
+                <h2>Quem foi Jesus?</h2>
+            </div>
+                <div class="flex">
+                    <div class="img-quem-foi-jesus">
+                        <img src="https://i0.wp.com/deusentrepaginas.com.br/wp-content/uploads/2024/02/Jesus-Caminha-sobre-a-agua.webp?resize=1200%2C673&ssl=1" alt="jesus sobre as águas">
+                    </div>
+                    <div class="txt-quem-foi-jesus">
+                        <p>
+                            Jesus é uma figura central na história da humanidade, reverenciado por bilhões ao longo dos séculos como o Filho de Deus e o Salvador do mundo. 
+                            Sua vida, ensinamentos e legado transcendem fronteiras culturais e religiosas, inspirando uma infinidade de seguidores em todo o mundo. 
+                            Ele nasceu em Belém, na Palestina, aproximadamente há dois mil anos, e viveu uma vida humilde, dedicada ao serviço, compaixão e amor incondicional. 
+                            Seus ensinamentos revolucionários, centrados no amor a Deus e ao próximo, desafiaram as normas sociais de sua época e continuam a ressoar até os dias 
+                            de hoje. Jesus realizou milagres extraordinários, curando os doentes, alimentando os famintos e trazendo esperança aos oprimidos. Sua morte na cruz, 
+                            seguida pela ressurreição, é a base da fé cristã, representando a redenção e a salvação para todos os que creem. Sua mensagem de amor, perdão e 
+                            reconciliação ecoa através dos tempos, impactando profundamente a história e a espiritualidade de inúmeras pessoas em todo o mundo. 
+                            Jesus não é apenas uma figura histórica; Ele é o caminho, a verdade e a vida, oferecendo esperança e salvação a todos que o seguem.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <div class="Quem-somos" id="sobreNós">
         <section class="quem-somos">
@@ -64,7 +90,7 @@
             </div>
                 <div class="flex">
                     <div class="img-quem-somos">
-                        <img src="https://istoe.com.br/wp-content/uploads/2021/05/ceia-2-1280x720-1.jpg?x26443" alt="imagem 1">
+                        <img src="../img/259.jpg" alt="Santa ceia">
                     </div>
                     <div class="txt-quem-somos">
                         <p>
@@ -74,6 +100,32 @@
                             Abordaremos também o significado da sua crucificação e ressurreição, bem como a influência duradoura que Ele tem na fé cristã e na cultura ao redor do mundo.
                             Esperamos que este espaço seja uma fonte de inspiração e aprendizado para todos que desejam conhecer mais sobre Jesus e seu papel na história da humanidade. 
                             Junte-se a nós para explorar a vida e a missão de Jesus Cristo, e descubra como sua mensagem de amor, perdão e esperança continua a ressoar nos dias de hoje.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    
+    <div class="Nosso-objetivo" id="NossoObjetivo">
+        <section class="nosso-objetivo">
+            <div class="txt-nosso-objetivo-titulo">
+                <h2>Nosso objetivo</h2>
+            </div>
+                <div class="flex">
+                    <div class="img-nosso-objetivo">
+                        <img src="https://mega.ibxk.com.br/2022/03/31/31121643566208.jpg" alt="Jesus ensinando">
+                    </div>
+                    <div class="txt-nosso-objetivo">
+                        <p>
+                            Nosso objetivo é apresentar a história e a essência de Jesus Cristo de uma maneira que você possa entender a importância dessa figura na história 
+                            e na cultura. Queremos compartilhar o Jesus que conhecemos, para proporcionar um ambiente acolhedor para dúvidas, descobertas e compreensão.
+                            Através de histórias, ensinamentos e exemplos de vida, queremos mostrar o impacto positivo que a mensagem de Jesus pode ter nas vidas das pessoas. 
+                            Esperamos que você possa apreciar seu legado de amor, compaixão e respeito ao próximo, e encontrar ideias que se alinhem com sua jornada.
+                            Este site é um convite para conhecer Jesus do nosso ponto de vista, descobrindo como suas palavras e ações influenciaram gerações e continuam a inspirar 
+                            pessoas ao redor do mundo, inclusive a nossa. Você está convidado a explorar, perguntar e refletir sobre a vida e a missão de Jesus sem pressões ou 
+                            julgamentos. O que importa é que você possa aprender e desfrutar desse aprendizado.
                         </p>
                     </div>
                 </div>
@@ -122,19 +174,46 @@
       </section>
 
 
-       <footer>
-        <!-- Linha decorativa -->
-        <div class="footer-section">
-            &copy; 2024 Meu Site. Todos os direitos reservados.
-        </div>
+<!-- FOOTER -->
+<footer>
+    <div class="container-footer">
+        <ul>
+            <h3>
+                Jesus Vive
+            </h3>
+            <p>Porque Deus amou o mundo de tal maneira<br> 
+            que deu o seu Filho unigênito,<br>
+            para que todo aquele que nele crê não pereça,<br>
+            mas tenha a vida eterna.</p>
+            <div class="redes-sociais">
+                <img src="../img/instagram.png" alt="instagram">
+                <img src="../img/linkedin.png" alt="linkedin">
+                <img src="../img/github.png" alt="github">
+            </div>
+        </ul>
 
-        <!-- Links úteis -->
-        <div class="footer-section">
-            <a href="#privacidade">Política de Privacidade</a> |
-            <a href="#termos">Termos de Uso</a> |
-            <a href="#contato">Contato</a>
-        </div>
-    </footer>
+        <ul>
+            <h3>Link</h3>
+        <li><a onclick="scrollToSection(0)">Home</a></li>
+        <li><a onclick="scrollToSection(1814)">Sobre nós</a></li>
+        <li><a onclick="scrollToSection(3749)">Envie uma mensagem</a></li>
+        <li><a href="./telaLogin.html">Entrar</a></li>
+        </ul>
+
+        <ul>
+            <h3>Nos contate</h3>
+        <li>
+            <p>+55 (11) 96803-1688</p>
+        </li>
+        <li>
+            <p>ronald2020xx@gmail.com</p>
+        </li>
+        <li>
+            <p>Brasil</p>
+        </li>
+        </ul>
+    </div>
+</footer>
 
 
 </body>

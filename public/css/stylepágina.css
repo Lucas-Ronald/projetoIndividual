@@ -1,134 +1,132 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Fira Mono", monospace;
-    font-weight: 400;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira Mono", monospace;
+  font-weight: 400;
 }
 
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #ffffff;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff;
 }
 
 .container {
-    max-width: 1280px;
-    margin: auto;
-  }
-  
-  .flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  header {
-    width: 100%;
-    padding: 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-   background-color: #423129;
-  }
-  
-  header ul {
-    list-style-type: none;
-  }
-  
-  header ul li {
-    display: inline-block;
-    margin: 0 40px;
-  }
-  
-  header ul li a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  header a {
-      color: #ffffff;
-      text-decoration: none;
-      display: inline-block;
-      transition: 0.1s;
-      text-shadow: none;
-  
-    }
-  
-  header a:hover {
-      color: #fffefe;
-      transform: scale(1.05);
-      text-shadow: 3px 3px 4px rgba(0, 0, 0, 10);
-    }
-  
-  header .btn-entrar button {
-    background-color: #423129; 
-    color: #fff; /* Texto branco para contraste */
-    border: 1;
-    border-color: white;
-    padding: 10px 20px; /* Espaçamento interno */
-    font-size: 16px; /* Tamanho da fonte */
-    border-radius: 5px; /* Bordas arredondadas */
-    cursor: pointer; /* Cursor em formato de mão */
-    transition: all 0.3s ease; /* Transição suave */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 1); /* Sombra mais pronunciada */
-  }
-  
-  header .btn-entrar button:hover {
-    box-shadow: 0px 0px 8px #423129;
-  }
+  max-width: 1280px;
+  margin: auto;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header {
+  width: 100%;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #423129;
+}
+
+header ul {
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+  margin: 0 40px;
+}
+
+header ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+header a {
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.1s;
+  text-shadow: none;
+}
+
+header a:hover {
+  color: #fffefe;
+  transform: scale(1.05);
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 10);
+}
+
+header .btn-entrar button {
+  background-color: #423129;
+  color: #fff; /* Texto branco para contraste */
+  border: 1;
+  border-color: white;
+  padding: 10px 20px; /* Espaçamento interno */
+  font-size: 16px; /* Tamanho da fonte */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor em formato de mão */
+  transition: all 0.3s ease; /* Transição suave */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 1); /* Sombra mais pronunciada */
+}
+
+header .btn-entrar button:hover {
+  box-shadow: 0px 0px 8px #423129;
+}
 
 /* História seção  */
-.heading{
-    text-align: center;
-    color: #5f4336;
-    text-transform: uppercase;
-    padding-bottom: 3.5rem;
-    font-size: 4rem;
-    margin-top: 100px;
+.heading {
+  text-align: center;
+  color: #5f4336;
+  text-transform: uppercase;
+  padding-bottom: 3.5rem;
+  font-size: 4rem;
+  margin-top: 100px;
 }
 
-.heading span{
-    color: #423129;
-    text-transform: uppercase;
-    font-weight: bold;
+.heading span {
+  color: #423129;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
-
-.about .row{
-    display: flex;
-    align-items: center;
-    background: rgb(255, 255, 255);
-    flex-wrap: wrap;
+.about .row {
+  display: flex;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  flex-wrap: wrap;
 }
 
-.about .row .image{
-    flex: 1 1 15rem;
+.about .row .image {
+  flex: 1 1 15rem;
 }
 
-.about .row .image img{
+.about .row .image img {
   padding-left: 20px;
   width: 100%;
 }
 
-.about .row .content{
-    flex: 1 1 45rem;
-    padding: 2rem;
+.about .row .content {
+  flex: 1 1 45rem;
+  padding: 2rem;
 }
 
-.about .row .content h3{
-    font-size: 1.5rem;
-    color: #5f4336;
-    text-align: center;
+.about .row .content h3 {
+  font-size: 1.5rem;
+  color: #5f4336;
+  text-align: center;
 }
 
-.about .row .content p{
-    font-size: 1.2rem;
-    color: #5f4336;
-    padding: 1rem 0;
-    line-height: 1.8;
-    text-align: justify;
+.about .row .content p {
+  font-size: 1.2rem;
+  color: #5f4336;
+  padding: 1rem 0;
+  line-height: 1.8;
+  text-align: justify;
 }

@@ -1,78 +1,78 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Fira Mono", monospace;
-    font-weight: 400;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira Mono", monospace;
+  font-weight: 400;
 }
 
-  
-  .container {
-    max-width: 1280px;
-    margin: auto;
-  }
-  
-  .flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+.container {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-jesus {
+  width: 80px;
+}
 
 header {
-    width: 100%;
-    padding: 60px 4%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    transition: 0.7s;
-    /* background-color: #5f4336fd; */
-  }
-   
-  header a {
-      color: #ffffff;
-      text-decoration: none;
-      display: inline-block;
-      transition: 0.1s;
-      text-shadow: none;
-    }
-  
-  header a:hover {
-      color: #ffffff;
-      transform: scale(1.05);
-      text-shadow: 3px 3px 4px rgba(0, 0, 0, 10);
-    }
-
-  header i{
-    font-size: 45px;
-    color: #ffffff;
-
+  width: 100%;
+  padding: 20px 4%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* background-color: #5f4336fd; */
 }
 
-header i:hover{
-    font-size: 45px;
-    color: #ffffff;
+header a {
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.1s;
+  text-shadow: none;
+}
+
+header a:hover {
+  color: #ffffff;
+  transform: scale(1.05);
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 10);
+}
+
+header i {
+  font-size: 45px;
+  color: #ffffff;
+}
+
+header i:hover {
+  font-size: 45px;
+  color: #ffffff;
 }
 /* LOGIN E CADASTRO */
 
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-image: url("https://pensandobiblia.blog.br/wp-content/uploads/2023/07/Como-morreram-os-apostolos-de-Jesus-Cristo-scaled.webp");
-    background-color: #08080879;
-    background-blend-mode: multiply;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("https://pensandobiblia.blog.br/wp-content/uploads/2023/07/Como-morreram-os-apostolos-de-Jesus-Cristo-scaled.webp");
+  background-color: #08080879;
+  background-blend-mode: multiply;
 }
 
 .wrapper {
-    position: relative;
-    width: 400px;
-    height: 500px;
-    background: #fffffff1;
-    box-shadow: 0 0 50px #5f4336;
-    border-radius: 20px;
-    padding: 40px;
-    overflow: hidden;
+  position: relative;
+  width: 400px;
+  height: 500px;
+  background: #fffffff1;
+  box-shadow: 0 0 50px #4f4341;
+  border-radius: 20px;
+  padding: 40px;
+  overflow: hidden;
 }
 
 /* .wrapper:hover{
@@ -86,133 +86,130 @@ body{
 } */
 
 .form-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    transition: 1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: 1s ease-in-out;
 }
 
 .wrapper.active .form-wrapper.entrar {
-    transform: translateY(-450px)
+  transform: translateY(-450px);
 }
 
-.wrapper .form-wrapper.registrar{
-    position: absolute;
-    top: 450px;
-    left: 0;
-
+.wrapper .form-wrapper.registrar {
+  position: absolute;
+  top: 450px;
+  left: 0;
 }
 
 .wrapper.active .form-wrapper.registrar {
-    transform: translateY(-450px)
+  transform: translateY(-450px);
 }
 
-h2{
-    font-size: 30px;
-    color: #5f4336;
-    text-align: center;
+h2 {
+  font-size: 30px;
+  color: #4f4341;
+  text-align: center;
 }
 
-.input-group{
-    position: relative;
-    margin: 30px 0;
-    border-bottom: 2px solid #5f4336;
+.input-group {
+  position: relative;
+  margin: 30px 0;
+  border-bottom: 2px solid #4f4341;
 }
 
-.input-group label{
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    transform: translateY(-50%);
-    font-size: 16px;
-    color: #5f4336;
-    pointer-events: none;
+.input-group label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #4f4341;
+  pointer-events: none;
 }
 
-.input-group input{
-    width: 320px;
-    height: 40px;
-    font-size: 16px;
-    color: #5f4336;
-    padding: 0 5px;
-    background: transparent;
-    border: none;
-    outline: none;
-    transition: .5s;
+.input-group input {
+  width: 320px;
+  height: 40px;
+  font-size: 16px;
+  color: #4f4341;
+  padding: 0 5px;
+  background: transparent;
+  border: none;
+  outline: none;
+  transition: 0.5s;
 }
 
-.input-group input:focus~label,
-.input-group input:valid~label{
-    top: -5px;
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+  top: -5px;
 }
 
-.remember{
-    margin: -5px 0 15px 5px;
+.remember {
+  margin: -5px 0 15px 5px;
 }
 
-.remember label{
-    color: #5f4336;
-    font-size: 14px;
+.remember label {
+  color: #4f4341;
+  font-size: 14px;
 }
 
-.remember label input{
-    accent-color: #5f4336;
+.remember label input {
+  accent-color: #4f4341;
 }
 
-button{
-    position: relative;
-    width: 100%;
-    height: 40px;
-    background: #5f4336;
-    box-shadow: 0 0 10px #5f4336;
-    font-size: 16px;
-    color: rgb(255, 255, 255);
-    font-weight: 500;
-    cursor: pointer;
-    border-radius: 30px;
-    border: none;
-    outline: none;
+button {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  background: #4f4341;
+  box-shadow: 0 0 10px #4f4341;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 30px;
+  border: none;
+  outline: none;
 }
 
-.registrar-link{
-    font-size: 14px;
-    text-align: center;
-    margin: 15px 0;
+.registrar-link {
+  font-size: 14px;
+  text-align: center;
+  margin: 15px 0;
 }
 
-.registrar-link p{
-    color: 5f4336;
+.registrar-link p {
+  color: #4f4341;
 }
 
-.registrar-link p a{
-    color: #5f4336;
-    text-decoration: none;
-    font-weight: 500;   
+.registrar-link p a {
+  color: #4f4341;
+  text-decoration: none;
+  font-weight: 500;
 }
 
-.registrar-link p a:hover{
-    text-decoration: underline;
+.registrar-link p a:hover {
+  text-decoration: underline;
 }
-
-
 
 /* MENSAGEM DE ERRO */
-.erro{
-    color: red;
-    background-color: rgb(255, 174, 174);
-    border-radius: 5px;
+.erro {
+  color: red;
+  background-color: rgb(255, 174, 174);
+  border-radius: 5px;
 }
 
-.disabled{
-    display: none;
+.disabled {
+  display: none;
 }
 
-#div_mensagem{
-    margin: 0.9rem 0;
+#div_mensagem {
+  margin: 0.9rem 0;
 }
 
 #div_mensagem_login {
-    margin: 0.9rem 0;
+  margin: 0.9rem 0;
 }

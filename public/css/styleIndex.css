@@ -1,0 +1,518 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira Mono", monospace;
+  font-weight: 400;
+}
+
+html {
+  height: 400vh;
+}
+
+.container {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-jesus {
+  width: 80px;
+}
+
+header {
+  width: 100%;
+  padding: 20px 4%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 0.7s;
+}
+
+header.rolagem {
+  background-color: #4f4341;
+  padding: 20px 4%;
+  border-bottom: 2px solid #ffffff;
+  z-index: 1000;
+}
+
+header.rolagem a {
+  color: #c5c4c4;
+}
+
+header ul {
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+  margin: 0 40px;
+}
+
+header ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+header a {
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.1s;
+  text-shadow: none;
+}
+
+header a:hover {
+  color: #fffefe;
+  transform: scale(1.05);
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 3);
+}
+
+header .btn-entrar button {
+  background-color: #695c5a;
+  color: #ffffff; /* Texto branco para contraste */
+  border: 1;
+  border-color: #ffffff;
+  padding: 10px 20px; /* Espaçamento interno */
+  font-size: 16px; /* Tamanho da fonte */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor em formato de mão */
+  transition: all 0.3s ease; /* Transição suave */
+}
+
+header.rolagem .btn-entrar button {
+  background-color: #695c5a;
+  color: #ffffff83; /* Texto branco para contraste */
+  border: 1;
+  border-color: rgba(255, 255, 255, 0.548);
+  padding: 10px 20px; /* Espaçamento interno */
+  font-size: 16px; /* Tamanho da fonte */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor em formato de mão */
+  transition: all 0.3s ease; /* Transição suave */
+}
+
+header .btn-entrar button:hover {
+  background-color: #695c5a;
+  color: #ffffff; /* Texto branco para contraste */
+  border: 1;
+  border-color: #ffffff;
+  text-shadow: 2px 2px 3px rgb(0, 0, 0, 2);
+  box-shadow: 0px 0px 8px #423129;
+}
+
+/* BANNER */
+.banner {
+  display: grid;
+  align-items: center;
+  height: 100vh;
+  background-image: url("https://pensandobiblia.blog.br/wp-content/uploads/2023/07/Como-morreram-os-apostolos-de-Jesus-Cristo-scaled.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #080808bd;
+  background-blend-mode: multiply;
+  /* filter: brightness(40%); */
+}
+
+/* TOPO DO SITE */
+section.banner {
+  padding: 10px 1%;
+}
+
+.btn-sobre-nos button {
+  padding: 8px;
+  font-size: 18px;
+  font-weight: 200;
+  color: #ffffff;
+  background-color: #4f4341;
+  border: 1;
+  border-color: #ffffff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-sobre-nos button:hover {
+  box-shadow: 0px 0px 8px #4f4341;
+}
+
+.banner .txt-topo-site {
+  padding: 70px 4%;
+  color: #ffffff;
+  font-size: 100px;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 2);
+}
+
+/* QUEM FOI JESUS */
+.Quem-foi-jesus {
+  display: flex;
+  width: 100%; /* Ocupa toda a largura do viewport */
+  height: 100vh; /* Ocupa toda a altura do viewport */
+  background-color: #ffffff;
+  justify-content: center;
+}
+
+.img-quem-foi-jesus {
+  flex: 1; /* A imagem ocupa parte do espaço */
+  padding: 50px;
+}
+
+.img-quem-foi-jesus img {
+  width: 925px; /* Ajusta a largura da imagem para o tamanho do contêiner */
+  height: 592px; /* Mantém a proporção da imagem */
+}
+
+.txt-quem-foi-jesus {
+  flex: 2; /* O texto ocupa mais espaço */
+  text-align: center;
+  color: #4f4341;
+  top: 680px; /* Posição vertical (y) */
+  font-size: 16px;
+  padding-right: 50px;
+}
+
+.txt-quem-foi-jesus p {
+  flex: 2; /* O texto ocupa mais espaço */
+  text-align: justify;
+  color: #4f4341;
+  top: 680px; /* Posição vertical (y) */
+  font-size: 23px;
+  left: 59px; /* Posição horizontal (x) */
+  padding-right: 50px;
+  padding: 37px;
+}
+
+.txt-quem-foi-jesus-titulo h2 {
+  padding-top: 110px;
+  color: #4f4341;
+  text-align: center;
+  font-weight: bold;
+  font-size: 65px;
+  margin: 10px;
+  padding: 10px;
+}
+
+/* QUEM SOMOS */
+.Quem-somos {
+  display: flex;
+  width: 100%; /* Ocupa toda a largura do viewport */
+  height: 100vh; /* Ocupa toda a altura do viewport */
+  background-color: #4f4341;
+  justify-content: center;
+}
+
+.img-quem-somos {
+  flex: 1; /* A imagem ocupa parte do espaço */
+  padding: 50px;
+}
+
+.img-quem-somos img {
+  width: 925px; /* Ajusta a largura da imagem para o tamanho do contêiner */
+  height: 592px; /* Mantém a proporção da imagem */
+}
+
+.txt-quem-somos {
+  flex: 2; /* O texto ocupa mais espaço */
+  text-align: center;
+  color: #ffffff;
+  top: 680px; /* Posição vertical (y) */
+  font-size: 16px;
+  padding-right: 50px;
+}
+
+.txt-quem-somos p {
+  flex: 2; /* O texto ocupa mais espaço */
+  text-align: justify;
+  color: #ffffff;
+  top: 680px; /* Posição vertical (y) */
+  font-size: 23px;
+  left: 59px; /* Posição horizontal (x) */
+  padding-right: 50px;
+  padding: 37px;
+}
+
+.txt-quem-somos-titulo h2 {
+  padding-top: 110px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 65px;
+  margin: 10px;
+  padding: 10px;
+}
+
+/* NOSSO OBJETIVO*/
+.Nosso-objetivo {
+  display: flex;
+  width: 100%; /* Ocupa toda a largura do viewport */
+  height: 100vh; /* Ocupa toda a altura do viewport */
+  background-color: #ffffff;
+  justify-content: center;
+}
+
+.img-nosso-objetivo {
+  flex: 1; /* A imagem ocupa parte do espaço */
+  padding: 50px;
+}
+
+.img-nosso-objetivo img {
+  width: 925px; /* Ajusta a largura da imagem para o tamanho do contêiner */
+  height: 592px; /* Mantém a proporção da imagem */
+}
+
+.txt-nosso-objetivo {
+  flex: 2; /* O texto ocupa mais espaço */
+  text-align: center;
+  color: #4f4341;
+  top: 680px; /* Posição vertical (y) */
+  font-size: 16px;
+  padding-right: 50px;
+}
+
+.txt-nosso-objetivo p {
+  flex: 2; /* O texto ocupa mais espaço */
+  text-align: justify;
+  color: #4f4341;
+  top: 680px; /* Posição vertical (y) */
+  font-size: 23px;
+  left: 59px; /* Posição horizontal (x) */
+  padding-right: 50px;
+  padding: 37px;
+}
+
+.txt-nosso-objetivo-titulo h2 {
+  padding-top: 110px;
+  color: #4f4341;
+  text-align: center;
+  font-weight: bold;
+  font-size: 65px;
+  margin: 10px;
+  padding: 10px;
+}
+
+/* QUEM SOMOS */
+.Quem-somos {
+  display: flex;
+  width: 100%; /* Ocupa toda a largura do viewport */
+  height: 100vh; /* Ocupa toda a altura do viewport */
+  background-color: #4f4341;
+  justify-content: center;
+}
+
+.img-quem-somos {
+  flex: 1; /* A imagem ocupa parte do espaço */
+  padding: 50px;
+}
+
+.img-quem-somos img {
+  width: 925px; /* Ajusta a largura da imagem para o tamanho do contêiner */
+  height: 592px; /* Mantém a proporção da imagem */
+}
+
+.txt-quem-somos {
+  flex: 2; /* O texto ocupa mais espaço */
+  text-align: center;
+  color: #ffffff;
+  top: 680px; /* Posição vertical (y) */
+  font-size: 16px;
+  padding-right: 50px;
+}
+
+.txt-quem-somos p {
+  flex: 2; /* O texto ocupa mais espaço */
+  text-align: justify;
+  color: #ffffff;
+  top: 680px; /* Posição vertical (y) */
+  font-size: 23px;
+  left: 59px; /* Posição horizontal (x) */
+  padding-right: 50px;
+  padding: 37px;
+}
+
+.txt-quem-somos-titulo h2 {
+  padding-top: 110px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 65px;
+  margin: 10px;
+  padding: 10px;
+}
+
+/* CONTATO */
+
+.wrapper {
+  margin-inline: auto;
+  padding-inline: 5%;
+  width: 100%;
+  height: auto;
+}
+section#contact {
+  background-color: #4f4341;
+  color: #ffffff;
+  margin: 0.4rem 0;
+}
+
+section#contact .wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 3.2rem;
+}
+
+section#contact .info {
+  display: flex;
+  flex-direction: column;
+  gap: 3.4rem;
+}
+
+section#contact .info .txt-contato-titulo {
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
+  margin: 10px;
+  padding: 10px;
+}
+
+section#contact .info .info-field h4 {
+  margin-bottom: 1.2rem;
+  font-weight: 400;
+  font-size: 25px;
+}
+
+section#contact .info .info-field p {
+  line-height: 2.8rem;
+  font-size: 20px;
+}
+
+section#contact .form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+
+section#contact .form .form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+section#contact .form .form-field label {
+  font-weight: 400;
+}
+
+section#contact .form .form-field input {
+  width: 55.6rem;
+  height: 4.8rem;
+  font-size: 2rem;
+  line-height: 2rem;
+  color: #ffffff;
+  background-color: transparent;
+  outline: 1px solid #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding-left: 1.6rem;
+}
+
+section#contact .form .form-field input:focus {
+  outline: 2px solid #ffffff;
+}
+
+section#contact .form .form-field input::placeholder {
+  font-size: 2rem;
+  line-height: 2rem;
+  color: #ffffff;
+  opacity: 0.7;
+}
+
+section#contact .form .form-field .message {
+  height: 13rem;
+  background-color: #4f4341;
+  resize: none;
+  border: none;
+  outline: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 2rem;
+  padding: 1.6rem;
+  border-radius: 10px;
+}
+
+section#contact .form .form-field .message:focus {
+  outline: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+section#contact .form .form-field .message::placeholder {
+  color: #ffffff;
+  opacity: 0.7;
+}
+
+section#contact .form .btn-form {
+  background-color: #ffffff;
+  color: #4f4341;
+  height: 4.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+section#contact .form .btn-form:hover {
+  background-color: #27201c;
+  box-shadow: 0px 0px 8px #423129;
+}
+
+/*=== FOOTER ===========================*/
+footer {
+  display: flex;
+  background-color: #4f4341;
+  padding: 20px;
+}
+
+footer .container-footer {
+  display: flex;
+  color: #ffffff;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+footer .container-footer ul {
+  list-style-type: none;
+  padding: 10px;
+}
+
+footer .container-footer h3 {
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+footer .container-footer .redes-sociais img {
+  width: 2.5rem;
+  margin-right: 10px;
+}
+
+footer .container-footer ul > p {
+  margin-bottom: 40px;
+}
+
+footer .container-footer li {
+  margin: 10px 0;
+}
+
+footer .container-footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+footer .container-footer a:hover {
+  color: #fffefe;
+  transform: scale(1.05);
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 3);
+}
