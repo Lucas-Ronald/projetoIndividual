@@ -8,6 +8,7 @@
 
 html {
   height: 400vh;
+  scroll-behavior: smooth;
 }
 
 .container {

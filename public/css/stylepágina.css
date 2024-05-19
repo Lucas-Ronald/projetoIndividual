@@ -3,35 +3,50 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Fira Mono", monospace;
-  font-weight: 400;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #ffffff;
+html {
+  scroll-behavior: smooth;
 }
 
 .container {
-  max-width: 1280px;
-  margin: auto;
+  width: 100%;
 }
 
-.flex {
+.flex-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-jesus {
+  width: 80px;
+}
+
 header {
   width: 100%;
-  padding: 20px;
+  padding: 20px 4%;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #423129;
+  transition: 0.7s;
+}
+
+header.rolagem {
+  background-color: #4f4341;
+  padding: 20px 4%;
+  border-bottom: 2px solid #ffffff;
+  z-index: 1000;
+}
+
+header.rolagem a {
+  color: #c5c4c4;
 }
 
 header ul {
@@ -44,7 +59,7 @@ header ul li {
 }
 
 header ul li a {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -59,74 +74,184 @@ header a {
 header a:hover {
   color: #fffefe;
   transform: scale(1.05);
-  text-shadow: 3px 3px 4px rgba(0, 0, 0, 10);
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 3);
 }
 
 header .btn-entrar button {
-  background-color: #423129;
-  color: #fff; /* Texto branco para contraste */
+  background-color: #695c5a;
+  color: #ffffff; /* Texto branco para contraste */
   border: 1;
-  border-color: white;
+  border-color: #ffffff;
   padding: 10px 20px; /* Espaçamento interno */
   font-size: 16px; /* Tamanho da fonte */
   border-radius: 5px; /* Bordas arredondadas */
   cursor: pointer; /* Cursor em formato de mão */
   transition: all 0.3s ease; /* Transição suave */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 1); /* Sombra mais pronunciada */
+}
+
+header.rolagem .btn-entrar button {
+  background-color: #695c5a;
+  color: #ffffff83; /* Texto branco para contraste */
+  border: 1;
+  border-color: rgba(255, 255, 255, 0.548);
+  padding: 10px 20px; /* Espaçamento interno */
+  font-size: 16px; /* Tamanho da fonte */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor em formato de mão */
+  transition: all 0.3s ease; /* Transição suave */
 }
 
 header .btn-entrar button:hover {
+  background-color: #695c5a;
+  color: #ffffff; /* Texto branco para contraste */
+  border: 1;
+  border-color: #ffffff;
+  text-shadow: 2px 2px 3px rgb(0, 0, 0, 2);
   box-shadow: 0px 0px 8px #423129;
 }
 
-/* História seção  */
-.heading {
-  text-align: center;
-  color: #5f4336;
-  text-transform: uppercase;
-  padding-bottom: 3.5rem;
-  font-size: 4rem;
-  margin-top: 100px;
-}
-
-.heading span {
-  color: #423129;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.about .row {
-  display: flex;
+/* BANNER */
+.banner {
+  display: grid;
   align-items: center;
-  background: rgb(255, 255, 255);
-  flex-wrap: wrap;
+  height: 100vh;
+  background-image: url("https://folhadolitoral.com.br/wp-content/uploads/2021/12/nhu0kce.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #080808e5;
+  background-blend-mode: multiply;
+  /* filter: brightness(40%); */
 }
 
-.about .row .image {
-  flex: 1 1 15rem;
+/* TOPO DO SITE */
+section.banner {
+  padding: 10px 1%;
 }
 
-.about .row .image img {
-  padding-left: 20px;
+.btn-sobre-nos button {
+  padding: 8px;
+  font-size: 18px;
+  font-weight: 200;
+  color: #ffffff;
+  background-color: #4f4341;
+  border: 1;
+  border-color: #ffffff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-sobre-nos button:hover {
+  box-shadow: 0px 0px 8px #4f4341;
+}
+
+.banner .txt-topo-site {
+  padding: 70px 4%;
+  color: #ffffff;
+  font-size: 75px;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 2);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* QUEM FOI JESUS */
+.Quem-foi-jesus {
+  display: flex;
+  width: 100%; /* Ocupa toda a largura do viewport */
+  height: 100vh; /* Ocupa toda a altura do viewport */
+  background-color: #ffffff;
+  justify-content: center;
+}
+
+.img-quem-foi-jesus {
+  flex: 1; /* A imagem ocupa parte do espaço */
+  padding: 50px;
+}
+
+.img-quem-foi-jesus img {
+  width: 925px; /* Ajusta a largura da imagem para o tamanho do contêiner */
+  height: 592px; /* Mantém a proporção da imagem */
+}
+
+.txt-quem-foi-jesus {
+  flex: 2; /* O texto ocupa mais espaço */
+  text-align: center;
+  color: #4f4341;
+  top: 680px; /* Posição vertical (y) */
+  font-size: 16px;
+  padding: 25px;
+  padding-top: 0;
+}
+
+.txt-quem-foi-jesus p {
+  flex: 2; /* O texto ocupa mais espaço */
+  text-align: justify;
+  color: #4f4341;
+  top: 680px; /* Posição vertical (y) */
+  font-size: 18px;
+  left: 59px; /* Posição horizontal (x) */
+  padding: 20px;
+}
+
+.txt-quem-foi-jesus-titulo h2 {
+  color: #4f4341;
+  text-align: center;
+  font-weight: bold;
+  font-size: 65px;
+  padding: 20px;
+}
+
+
+/*=== FOOTER ===========================*/
+footer {
+  position: relative;
+  display: flex;
+  background-color: #4f4341;
+  padding: 20px;
+  margin-top: 20px;
+  bottom: 0;
   width: 100%;
 }
 
-.about .row .content {
-  flex: 1 1 45rem;
-  padding: 2rem;
+footer .container-footer {
+  display: flex;
+  color: #ffffff;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.about .row .content h3 {
-  font-size: 1.5rem;
-  color: #5f4336;
-  text-align: center;
+footer .container-footer ul {
+  list-style-type: none;
+  padding: 10px;
 }
 
-.about .row .content p {
-  font-size: 1.2rem;
-  color: #5f4336;
-  padding: 1rem 0;
-  line-height: 1.8;
-  text-align: justify;
+footer .container-footer h3 {
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+footer .container-footer .redes-sociais img {
+  width: 2.5rem;
+  margin-right: 10px;
+}
+
+footer .container-footer ul > p {
+  margin-bottom: 40px;
+}
+
+footer .container-footer li {
+  margin: 10px 0;
+}
+
+footer .container-footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+footer .container-footer a:hover {
+  color: #fffefe;
+  transform: scale(1.05);
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 3);
 }
