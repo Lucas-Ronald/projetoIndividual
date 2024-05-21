@@ -1,31 +1,115 @@
-*{
-    padding: 0;
+* {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
-}
+    font-family: "Fira Mono", monospace;
+    font-weight: 400;
+  }
+  
+  .container-header {
+    width: 100%;
+  }
+  
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo-jesus {
+    width: 80px;
+  }
+  
+  header {
+    width: 100%;
+    padding: 20px 4%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 0.7s;
+    z-index: 100;
+  }
+  
+  header.rolagem {
+    background-color: #5f4336;
+    padding: 30px 4%;
+  }
+  
+  header.rolagem a {
+    color: #ffffff;
+  }
+  
+  header ul {
+    list-style-type: none;
+  }
+  
+  header ul li {
+    display: inline-block;
+    margin: 0 40px;
+  }
+  
+  header ul li a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  header a {
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.1s;
+    text-shadow: none;
+  }
+  
+  header a:hover {
+    color: #fffefe;
+    transform: scale(1.05);
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 10);
+  }
+  
+  header .btn-entrar button {
+    background-color: #695c5a;
+    color: #ffffff; /* Texto branco para contraste */
+    border: 1;
+    border-color: #ffffff;
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor em formato de mão */
+    transition: all 0.3s ease; /* Transição suave */
+  }
+  
+  header .btn-entrar button:hover {
+    background-color: #695c5a;
+    color: #ffffff; /* Texto branco para contraste */
+    border: 1;
+    border-color: #ffffff;
+    text-shadow: 2px 2px 3px rgb(0, 0, 0, 2);
+    box-shadow: 0px 0px 8px #423129;
+  }
+  
 
 button {
     cursor: pointer;
 }
 
 body{
-    background-color: #121214;
     color: #FFFFFF;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url("https://pensandobiblia.blog.br/wp-content/uploads/2023/07/Como-morreram-os-apostolos-de-Jesus-Cristo-scaled.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #080808e5;
+    background-blend-mode: multiply;
 }
 
 .container{
-    background-color: #121214;
     width: 90%;
     max-width: 800px;
-
-    border: 2px solid #E1E1E6;
-    border-radius: 6px;
-    padding: 16px;
-    box-shadow: 0 0 2px 2px;
 
     display: flex;
     flex-direction: column;
@@ -60,7 +144,7 @@ body{
 }
 
 .button{
-    background-color: #4836f2;
+    background-color: #4f4341;
     color: #FFFFFF;
     font-size: 16px;
     font-weight: bold;
@@ -72,10 +156,33 @@ body{
     transition: filter 0.2s;
 }
 
-.button:hover{
+.button:not(:disabled):hover{
     filter: brightness(0.8);
+}
+
+.answer:disabled{
+    cursor: not-allowed;
+}
+
+.final-message{
+    font-size: 20px;
+    text-align: center;
+}
+
+.final-message span{
+    display: block;
+    margin-top: 8px;
 }
 
 .hide{
     display: none;
 }
+
+.correct {
+    background-color: #049b48;
+}
+
+.incorrect {
+    background-color: #a10101;
+}
+

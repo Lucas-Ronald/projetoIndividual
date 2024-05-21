@@ -7,6 +7,31 @@
     <link rel="stylesheet" href="../css/styleQuiz.css">
 </head>
 <body>
+    <header id="header">
+        <div class="container-header">
+          <div class="flex">
+            <a href="#"
+              ><img
+                src="../assets/img/people.png"
+                class="logo-jesus"
+                alt="jesusLogo"
+            /></a>
+  
+            <nav>
+              <ul>
+                <li><a href="./histórias.html">Histórias</a></li>
+                <li><a href="./quiz.html">Quiz</a></li>
+                <li><a href="#">Mensagem</a></li>
+              </ul>
+            </nav>
+  
+            <div class="btn-entrar">
+              <a href="./telaLogin.html"><button>ENTRAR</button></a>
+            </div>
+          </div>
+        </div>
+      </header>
+  
     <div class="container">
         <div class="questions-container hide">
             <span class="question">Pergunta aqui?</span>
@@ -24,3 +49,211 @@
     </div>
 </body>
 </html>
+
+<script>
+    const startGameButton = document.querySelector(".start-quiz")
+    const questionsContainer = document.querySelector(".questions-container")
+    const answersContainer = document.querySelector(".answers-container")
+    const questionText = document.querySelector(".question")
+    const nextQuestionButton = document.querySelector(".next-question")
+
+
+    startGameButton.addEventListener("click", startGame)
+    nextQuestionButton.addEventListener("click", displayNextQuestion)
+
+    let currentQuestionIndex = 0
+    let totalCorrect = 0
+
+    function startGame() {
+        startGameButton.classList.add("hide")
+        questionsContainer.classList.remove("hide")
+        displayNextQuestion()
+    }
+
+    function displayNextQuestion(){
+        resetState()
+
+        if(questions.length == currentQuestionIndex){
+            return finishGame()
+        }
+
+        questionText.textContent = questions[currentQuestionIndex].question
+        questions[currentQuestionIndex].answers.forEach(answers => {
+            const newAnswer = document.createElement("button")
+            newAnswer.classList.add("button", "answer")
+            newAnswer.textContent = answers.text
+            if(answers.correct) {
+                newAnswer.dataset.correct = answers.correct
+            }
+            answersContainer.appendChild(newAnswer)
+
+            newAnswer.addEventListener("click", selectAnswer)
+        })
+    }
+
+    function resetState(){
+        while(answersContainer.firstChild){
+            answersContainer.removeChild(answersContainer.firstChild)
+        }
+
+
+        document.body.removeAttribute("class")
+        nextQuestionButton.classList.add("hide")
+    }
+
+    function selectAnswer(event){
+        const answerClicked = event.target
+
+        if(answerClicked.dataset.correct){
+            totalCorrect++
+         }
+
+        document.querySelectorAll(".answer").forEach (button => {
+            if(button.dataset.correct){
+                button.classList.add("correct")
+            } else {
+                button.classList.add("incorrect")
+            }
+
+            button.disabled = true
+        })
+
+        nextQuestionButton.classList.remove("hide")
+        currentQuestionIndex++
+    }
+
+    function finishGame(){
+        const totalQuestion = questions.length
+        const performance = Math.floor(totalCorrect * 100 / totalQuestion)
+
+        let mensage = ""
+
+        switch (true) {
+            case(performance >= 90):
+            message = "Excelente :)"
+            break
+            case(performance >=70):
+            message = "Muito bom :)"
+            break
+            case(performance >= 50):
+            message = "Bom"
+            break
+            default:
+                message = "Pode melhorar :("
+        }
+
+        questionsContainer.innerHTML =
+        `
+        <p class = "final-message">
+            Você acertou ${totalCorrect} de ${totalQuestion} questões!
+            <span>Resultado: ${message}</span>
+        </p>
+        <button onclick=window.location.reload() class = "button">
+            Refazer teste
+        </button>
+        `
+    }
+
+
+
+
+
+
+
+
+
+
+
+    const questions = [
+  {
+    question: "Quem foi o primeiro rei de Israel?",
+    answers: [
+      { text: "Saul", correct: true },
+      { text: "Davi", correct: false },
+      { text: "Salomão", correct: false },
+      { text: "Jeroboão", correct: false }
+    ]
+  },
+  {
+    question: "Qual é o nome do pai de Abraão?",
+    answers: [
+      { text: "Tera", correct: true },
+      { text: "Harã", correct: false },
+      { text: "Naor", correct: false },
+      { text: "Ló", correct: false }
+    ]
+  },
+  {
+    question: "Em qual cidade Paulo encontrou um altar ao 'Deus Desconhecido'?",
+    answers: [
+      { text: "Corinto", correct: false },
+      { text: "Éfeso", correct: false },
+      { text: "Atenas", correct: true },
+      { text: "Roma", correct: false }
+    ]
+  },
+  {
+    question: "Qual profeta confrontou o rei Acabe e a rainha Jezabel sobre a idolatria em Israel?",
+    answers: [
+      { text: "Isaías", correct: false },
+      { text: "Jeremias", correct: false },
+      { text: "Elias", correct: true },
+      { text: "Ezequiel", correct: false }
+    ]
+  },
+  {
+    question: "Quem foi o escriba e sacerdote que liderou um grupo de judeus de volta a Jerusalém e restaurou a lei de Moisés?",
+    answers: [
+      { text: "Esdras", correct: true },
+      { text: "Neemias", correct: false },
+      { text: "Zorobabel", correct: false },
+      { text: "Josué", correct: false }
+    ]
+  },
+  {
+    question: "Em qual livro da Bíblia encontramos a profecia das 'setenta semanas'?",
+    answers: [
+      { text: "Daniel", correct: true },
+      { text: "Apocalipse", correct: false },
+      { text: "Isaías", correct: false },
+      { text: "Ezequiel", correct: false }
+    ]
+  },
+  {
+    question: "Quem foi a única mulher a julgar Israel?",
+    answers: [
+      { text: "Rute", correct: false },
+      { text: "Ana", correct: false },
+      { text: "Débora", correct: true },
+      { text: "Ester", correct: false }
+    ]
+  },
+  {
+    question: "Em qual livro da Bíblia é mencionada a história de Balaão e sua jumenta?",
+    answers: [
+      { text: "Gênesis", correct: false },
+      { text: "Êxodo", correct: false },
+      { text: "Números", correct: true },
+      { text: "Deuteronômio", correct: false }
+    ]
+  },
+  {
+    question: "Quem era o discípulo que Jesus amava?",
+    answers: [
+      { text: "Pedro", correct: false },
+      { text: "Tiago", correct: false },
+      { text: "João", correct: true },
+      { text: "André", correct: false }
+    ]
+  },
+  {
+    question: "Qual foi a resposta de Jesus quando perguntado sobre o maior mandamento da Lei?",
+    answers: [
+      { text: "Não matarás.", correct: false },
+      { text: "Não adulterarás.", correct: false },
+      { text: "Amarás o Senhor teu Deus de todo o teu coração.", correct: true },
+      { text: "Honra teu pai e tua mãe.", correct: false }
+    ]
+  }
+];
+</script>
