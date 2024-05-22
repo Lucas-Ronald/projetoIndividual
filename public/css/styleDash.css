@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira Mono", monospace;
+  font-weight: 400;
+}
+
+html {
+  height: 400vh;
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-jesus {
+  width: 80px;
+}
+
+header {
+  width: 100%;
+  padding: 20px 4%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 0.7s;
+  background-color: #4f4341;
+}
+
+header.rolagem {
+  background-color: #4f4341;
+  padding: 20px 4%;
+  border-bottom: 2px solid #ffffff;
+  z-index: 1000;
+}
+
+header.rolagem a {
+  color: #c5c4c4;
+}
+
+header ul {
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+  margin: 0 40px;
+}
+
+header ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+header a {
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.1s;
+  text-shadow: none;
+}
+
+header a:hover {
+  color: #fffefe;
+  transform: scale(1.05);
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 3);
+}
+
+header .btn-entrar button {
+  background-color: #695c5a;
+  color: #ffffff; /* Texto branco para contraste */
+  border: 1;
+  border-color: #ffffff;
+  padding: 10px 20px; /* Espaçamento interno */
+  font-size: 16px; /* Tamanho da fonte */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor em formato de mão */
+  transition: all 0.3s ease; /* Transição suave */
+}
+
+header.rolagem .btn-entrar button {
+  background-color: #695c5a;
+  color: #ffffff83; /* Texto branco para contraste */
+  border: 1;
+  border-color: rgba(255, 255, 255, 0.548);
+  padding: 10px 20px; /* Espaçamento interno */
+  font-size: 16px; /* Tamanho da fonte */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor em formato de mão */
+  transition: all 0.3s ease; /* Transição suave */
+}
+
+header .btn-entrar button:hover {
+  background-color: #695c5a;
+  color: #ffffff; /* Texto branco para contraste */
+  border: 1;
+  border-color: #ffffff;
+  text-shadow: 2px 2px 3px rgb(0, 0, 0, 2);
+  box-shadow: 0px 0px 8px #423129;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Define a altura do corpo como 100% da altura da viewport */
+  margin: 0; /* Remove as margens padrão do corpo */
+}
+
+/* Estilo para os gráficos */
+.graficos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.graficos > div {
+  margin: 10px;
+  width: 40%; /* Ajuste conforme necessário */
+}
+
+canvas {
+  display: block;
+  margin: auto; /* Centraliza horizontalmente */
+}
+
+/* Estilo para os títulos dos gráficos */
+.graficos h1 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #333; /* Cor do texto */
+}
+
+/* Estilo para o container do header */
+.container {
+  max-width: 1200px; /* Largura máxima do container */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  padding: 0 20px; /* Espaçamento interno */
+}
+  

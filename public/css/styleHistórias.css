@@ -135,7 +135,7 @@ header .btn-entrar button:hover {
 }
 
 .slider .list .item .content .description {
-  font-size: 14px;
+  font-size: 16px;
   color: #f8f8f8;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 1); /* Sombra mais pronunciada */
 }
