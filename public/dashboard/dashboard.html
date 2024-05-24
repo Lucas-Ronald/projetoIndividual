@@ -33,24 +33,54 @@
         </div>
       </header>
 
-    <div class="graficos">
-        <h1>Quantidade de acertos</h1>
-        <canvas id="canvas_graficoBarra"></canvas>
+    <div class="graphic-container ">
+      <div class="graphic-1">
+        <h1>Top 3</h1>
+        <canvas id="canvas_graficoBarra_1"></canvas>
+      </div>
+      <div class="graphic-2">        
+        <h1>História mais curtida</h1>
+        <canvas id="canvas_graficoBarra_2"></canvas>
+      </div>
       </div>
     </div>
   </body>
 </html>
 
 <script>
-  const graficoBarra = document.getElementById("canvas_graficoBarra");
+  const graficoBarra_1 = document.getElementById("canvas_graficoBarra_1");
+  const graficoBarra_2 = document.getElementById("canvas_graficoBarra_2");
 
-  new Chart(graficoBarra, {
+  new Chart(graficoBarra_1, {
     type: "bar",
     data: {
-      labels: ["Usuario1", "Usuario2", "Usuario3", "Usuario4", "Usuario5", "Usuario6"],
+      labels: ["Usuario1", "Usuario2", "Usuario3"],
       datasets: [
         {
           label: "Acertos",
+          data: [10, 5, 7],
+          borderWidth: 1,
+          backgroundColor: "rgb(79, 67, 65)",
+          borderColor: "rgb(79, 67, 65)",
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+
+  new Chart(graficoBarra_2, {
+    type: "bar",
+    data: {
+      labels: ["Historia1", "Historia2", "Historia3", "Historia4", "Historia5", "Historia6"],
+      datasets: [
+        {
+          label: "Curtidas",
           data: [10, 5, 7, 4, 9, 1],
           borderWidth: 1,
           backgroundColor: "rgb(79, 67, 65)",

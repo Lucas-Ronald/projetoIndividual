@@ -117,13 +117,34 @@ body {
 }
 
 /* Estilo para os gráficos */
-.graficos {
+.graphic-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+  gap: 5rem;
 }
 
-.graficos > div {
+.graphic-1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.graphic-2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.graphic-1 > div {
+  margin: 10px;
+  width: 40%; /* Ajuste conforme necessário */
+}
+
+.graphic-2 > div {
   margin: 10px;
   width: 40%; /* Ajuste conforme necessário */
 }
@@ -134,7 +155,13 @@ canvas {
 }
 
 /* Estilo para os títulos dos gráficos */
-.graficos h1 {
+.graphic-1 h1 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #333; /* Cor do texto */
+}
+
+.graphic-2 h1 {
   margin-bottom: 10px;
   font-size: 1.5rem;
   color: #333; /* Cor do texto */

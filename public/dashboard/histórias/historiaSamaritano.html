@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="../../css/stylepágina.css" />
+
+  <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <header id="header">
+    <div class="container">
+
+      <div class="flex-header">
+
+        <a href="./index.html"><img src="../assets/img/people.png" class="logo-jesus" alt="jesusLogo"></a>
+
+        <nav>
+          <ul>
+            <li class="current"><a>Histórias</a></li>
+            <li><a href="./quiz.html">Quiz</a></li>
+            <li><a>Mensagem</a></li>
+          </ul>
+        </nav>
+
+        <div class="btn-entrar">
+          <a href="./telaLogin.html"><button>ENTRAR</button></a>
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <section class="banner" style="background-image: url(../../assets/img/O-bom-samaritano.webp);">
+    <div class="flex">
+      <div class="txt-topo-site">
+        <h1>
+          O BOM<br>
+          SAMARITANO.
+        </h1>
+        <div class="btn-sobre-nos">
+          <a onclick="mostrarMensagem(); scrollToSection(881)">
+            <button>Ler história</button>
+          </a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+<div id="div_mensagem" style="display: none;">
+  <div class="Quem-foi-jesus" id="ParteHistoria">
+    <section class="Quem-foi-Jesus">
+      <div class="txt-quem-foi-jesus-titulo">
+        <h2>O bom samaritano</h2>
+      </div>
+      <div class="flex">
+        <div class="txt-quem-foi-jesus">
+          <p>
+            O Bom Samaritano é uma das parábolas mais conhecidas e impactantes contadas por Jesus, registrada no Evangelho de Lucas, capítulo 10, versículos 25 a 37. 
+            Nesta parábola, Jesus responde a uma pergunta feita por um doutor da lei sobre quem é o próximo que ele deveria amar como a si mesmo.<br>
+            A história começa com um doutor da lei colocando Jesus à prova, perguntando o que ele deveria fazer para herdar a vida eterna. Jesus, em vez de responder 
+            diretamente, pede-lhe que explique o que a Lei de Moisés diz sobre esse assunto. O doutor da lei responde corretamente, citando o mandamento de amar a Deus 
+            sobre todas as coisas e amar o próximo como a si mesmo.
+          </p>
+          <p>
+            No entanto, buscando justificar-se, o doutor da lei faz outra pergunta: "E quem é o meu próximo?" Em resposta, Jesus conta a parábola do Bom Samaritano:<br>
+            Um homem descia de Jerusalém para Jericó e foi assaltado por ladrões, que o espancaram, roubaram seus pertences e o deixaram à beira da estrada, meio morto. 
+            Por acaso, um sacerdote vinha pelo mesmo caminho, mas ao ver o homem ferido, passou para o outro lado da estrada e seguiu adiante. Da mesma forma, um levita, 
+            ao chegar ao lugar e ver o homem, também passou ao largo, ignorando-o.
+          </p>
+          <p>
+            Então, um samaritano, que era desprezado pelos judeus, ao ver o homem caído, teve compaixão dele. Ele se aproximou, tratou-lhe os ferimentos, derramando 
+            óleo e vinho, e os enfaixou. Em seguida, colocou-o sobre o seu próprio animal, levou-o a uma hospedaria e cuidou dele durante a noite. No dia seguinte, 
+            o samaritano deu ao hospedeiro duas moedas de prata, pedindo-lhe que cuidasse do homem e prometendo pagar qualquer despesa adicional na sua volta.
+          </p>
+          <p>
+            Jesus então pergunta ao doutor da lei qual dos três homens foi o próximo do homem que caiu nas mãos dos ladrões. O doutor da lei responde que foi aquele 
+            que teve misericórdia dele. E Jesus conclui dizendo: "Vai e faze tu o mesmo."
+          </p>
+          <p>
+            Essa parábola ensina que o próximo não é definido pela proximidade geográfica ou cultural, mas pela disposição de ajudar e demonstrar compaixão. 
+            O Bom Samaritano exemplifica o amor ao próximo em ação, desafiando os preconceitos e mostrando que todos os seres humanos, independentemente de sua origem 
+            ou crença, merecem cuidado e compaixão.
+          </p>
+          <p>
+            Essa história é uma poderosa lição sobre empatia, bondade e amor ao próximo, que ressoa até os dias de hoje, inspirando as pessoas a praticarem ações 
+            altruístas em prol dos outros.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container-footer">
+      <ul>
+        <h3>
+          Jesus Vive
+        </h3>
+        <p>Porque Deus amou o mundo de tal maneira<br>
+          que deu o seu Filho unigênito,<br>
+          para que todo aquele que nele crê não pereça,<br>
+          mas tenha a vida eterna.</p>
+        <div class="redes-sociais">
+          <img src="../assets/img/instagram.png" alt="instagram">
+          <img src="../assets/img/linkedin.png" alt="linkedin">
+          <img src="../assets/img/github.png" alt="github">
+        </div>
+      </ul>
+
+      <ul>
+        <h3>Link</h3>
+        <li><a onclick="scrollToSection(0)">História</a></li>
+        <li><a onclick="scrollToSection(1814)">Quiz</a></li>
+        <li><a onclick="scrollToSection(3749)">Mensagem</a></li>
+      </ul>
+
+      <ul>
+        <h3>Nos contate</h3>
+        <li>
+          <p>+55 (11) 96803-1688</p>
+        </li>
+        <li>
+          <p>ronald2020xx@gmail.com</p>
+        </li>
+        <li>
+          <p>Brasil</p>
+        </li>
+      </ul>
+    </div>
+  </footer>
+</div>
+</body>
+
+</html>
+
+<script>
+    function mostrarMensagem() {
+      var divMensagem = document.getElementById("div_mensagem");
+      if (divMensagem) { // Verifica se o elemento foi encontrado
+        divMensagem.style.display = "block";
+      } else {
+        console.error("Elemento com ID 'div_mensagem' não encontrado.");
+      }
+    }
+
+
+  window.addEventListener("scroll", function () {
+    let header = document.querySelector('#header')
+    header.classList.toggle('rolagem', window.scrollY > 550)
+  })
+
+  function scrollToSection(to) {
+    window.scrollTo(0, to);
+  };
+
+</script>
