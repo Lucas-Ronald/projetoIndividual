@@ -61,15 +61,15 @@
             <div class="card-inner">
               <h3>HISTÓRIAS</h3>
             </div>
-            <h1>0</h1>
+            <h1 id="historias-count">0</h1>
           </div>
 
           <div class="card">
             <div class="card-inner">
-              <h3>USUÁRIOS</h3>
+                <h3>USUÁRIOS</h3>
             </div>
             <h1>0</h1>
-          </div>
+        </div>
 
         </div>
 
@@ -94,8 +94,6 @@
     <!-- Scripts -->
     <!-- ApexCharts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
-    <!-- Custom JS -->
-    <script src="js/scripts.js"></script>
   </body>
 </html>
 
@@ -119,6 +117,23 @@ function closeSidebar() {
     sidebarOpen = false;
   }
 }
+
+
+// Função para atualizar o número de histórias
+function updateHistoriasCount() {
+        fetch('/historia/contar')
+          .then(response => response.json())
+          .then(data => {
+            const historiasCountElement = document.getElementById('historias-count');
+            historiasCountElement.textContent = data[0].totalHistorias;
+          })
+          .catch(error => console.error('Erro ao buscar o número de histórias:', error));
+      }
+
+      // Chamar a função ao carregar a página
+      document.addEventListener('DOMContentLoaded', updateHistoriasCount);
+
+
 
 // ---------- CHARTS ----------
 
