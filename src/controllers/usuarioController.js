@@ -85,7 +85,20 @@ function cadastrar(req, res) {
     }
 }
 
+function contarUsuarios(req, res) {
+    usuarioModel.contarUsuarios()
+        .then((resultado) => {
+            res.status(200).json(resultado);
+        })
+        .catch((erro) => {
+            console.log(erro);
+            console.log("Houve um erro ao contar os usuários: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        });
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    contarUsuarios,
 }
