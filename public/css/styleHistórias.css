@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Fira Mono", monospace;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
 }
 
@@ -430,4 +430,19 @@ header .btn-entrar button:hover {
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 0px 8px #ffffff;
   transform: translateY(-2px); /* Leve elevação */
+}
+
+.slider .list .item .content .button .like-btn {
+  background-color: #3b5998; /* Cor azul típica do Facebook */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px; /* Espaçamento à esquerda */
+}
+
+.slider .list .item .content .button .like-btn:hover {
+  background-color: #2d4474; /* Cor mais escura ao passar o mouse */
 }

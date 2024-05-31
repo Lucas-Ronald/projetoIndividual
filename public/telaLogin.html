@@ -11,6 +11,7 @@
     <script src="./js/sessao.js"></script>
 
     <!--GOOGLE FONT-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -186,6 +187,7 @@
   });
 
   function logar() {
+    const email = input_email.value;
     const usuario = input_usuario_login.value;
     const senha = input_password_login.value;
 
@@ -213,13 +215,16 @@
         if (resposta.ok) {
           console.log(resposta);
 
+          div_mensagem_login.classList.remove("disabled");
+            div_mensagem_login.classList.add("erro");
+            div_mensagem_login.innerHTML = `<p style="text-align: center; color: #5f4336; background-color: #ffffff;">Login realizado com sucesso!</p>`;
+
           resposta.json().then((json) => {
             console.log(json);
             console.log(JSON.stringify(json));
-            sessionStorage.EMAIL_USUARIO = json.email;
-            sessionStorage.NOME_USUARIO = json.NomeUsuario;
             sessionStorage.ID_USUARIO = json.idUsuario;
-            // sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+            sessionStorage.NOME_USUARIO = json.nomeUsuario;
+            sessionStorage.EMAIL_USUARIO = json.email;
 
             setTimeout(function () {
               window.location = "./dashboard/histórias.html";

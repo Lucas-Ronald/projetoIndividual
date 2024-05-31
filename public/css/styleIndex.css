@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Fira Mono", monospace;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
 }
 
@@ -117,7 +117,6 @@ header .btn-entrar button:hover {
   background-size: cover;
   background-color: #080808bd;
   background-blend-mode: multiply;
-  /* filter: brightness(40%); */
 }
 
 /* TOPO DO SITE */
@@ -467,6 +466,56 @@ section#contact .form .btn-form {
 section#contact .form .btn-form:hover {
   background-color: #27201c;
   box-shadow: 0px 0px 8px #423129;
+}
+
+
+/* NOSSO OBJETIVO*/
+.onu {
+  display: flex;
+  width: 100%; /* Ocupa toda a largura do viewport */
+  height: 90vh; /* Ocupa toda a altura do viewport */
+  background-color: #ffffff;
+  justify-content: center;
+}
+
+.img-onu {
+  flex: 1; /* A imagem ocupa parte do espaço */
+  padding: 50px;
+}
+
+.img-onu img {
+  width: 500px; /* Ajusta a largura da imagem para o tamanho do contêiner */
+  height: auto; /* Mantém a proporção da imagem */
+}
+
+.txt-onu {
+  flex: 2; /* O texto ocupa mais espaço */
+  text-align: center;
+  color: #4f4341;
+  top: 680px; /* Posição vertical (y) */
+  font-size: 16px;
+  padding-right: 50px;
+}
+
+.txt-onu p {
+  flex: 2; /* O texto ocupa mais espaço */
+  text-align: justify;
+  color: #4f4341;
+  top: 680px; /* Posição vertical (y) */
+  font-size: 23px;
+  left: 59px; /* Posição horizontal (x) */
+  padding-right: 50px;
+  padding: 37px;
+}
+
+.txt-onu-titulo h2 {
+  padding-top: 110px;
+  color: #4f4341;
+  text-align: center;
+  font-weight: bold;
+  font-size: 65px;
+  margin: 10px;
+  padding: 10px;
 }
 
 /*=== FOOTER ===========================*/

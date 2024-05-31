@@ -56,7 +56,6 @@
         </div>
 
         <div class="main-cards">
-
           <div class="card">
             <div class="card-inner">
               <h3>HISTÓRIAS</h3>
@@ -94,6 +93,7 @@
 </html>
 
 <script>
+
   // SIDEBAR TOGGLE
 
   let sidebarOpen = false;
@@ -127,18 +127,17 @@
       );
   }
 
-function updateUsuariosCount() {
-  fetch('/usuarios/contar')
-    .then(response => response.json())
-    .then((data) => {
-      const usuariosCountElement = 
-      document.getElementById("usuarios-count");
-      usuariosCountElement.textContent = data[0].totalUsuarios;
-    })
-    .catch(error => 
-    console.error('Erro ao buscar o número de usuários:', error)
-  );
-}
+  function updateUsuariosCount() {
+    fetch("/usuarios/contar")
+      .then((response) => response.json())
+      .then((data) => {
+        const usuariosCountElement = document.getElementById("usuarios-count");
+        usuariosCountElement.textContent = data[0].totalUsuarios;
+      })
+      .catch((error) =>
+        console.error("Erro ao buscar o número de usuários:", error)
+      );
+  }
 
   // Chamar a função ao carregar a página
   document.addEventListener("DOMContentLoaded", updateHistoriasCount);

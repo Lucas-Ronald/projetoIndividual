@@ -6,6 +6,8 @@
     <title>JesusVive | Quiz</title>
     <link rel="stylesheet" href="../css/styleQuiz.css">
     <link rel="icon" href="../assets/img/people.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 </head>
 <body>
     <header id="header">
@@ -157,105 +159,96 @@
     }
 
 
-
-
-
-
-
-
-
-
-
     const questions = [
-  {
-    question: "Quem foi o primeiro rei de Israel?",
-    answers: [
-      { text: "Saul", correct: true },
-      { text: "Davi", correct: false },
-      { text: "Salomão", correct: false },
-      { text: "Jeroboão", correct: false }
-    ]
-  },
-  {
-    question: "Qual é o nome do pai de Abraão?",
-    answers: [
-      { text: "Tera", correct: true },
-      { text: "Harã", correct: false },
-      { text: "Naor", correct: false },
-      { text: "Ló", correct: false }
-    ]
-  },
-  {
-    question: "Em qual cidade Paulo encontrou um altar ao 'Deus Desconhecido'?",
-    answers: [
-      { text: "Corinto", correct: false },
-      { text: "Éfeso", correct: false },
-      { text: "Atenas", correct: true },
-      { text: "Roma", correct: false }
-    ]
-  },
-  {
-    question: "Qual profeta confrontou o rei Acabe e a rainha Jezabel sobre a idolatria em Israel?",
-    answers: [
-      { text: "Isaías", correct: false },
-      { text: "Jeremias", correct: false },
-      { text: "Elias", correct: true },
-      { text: "Ezequiel", correct: false }
-    ]
-  },
-  {
-    question: "Quem foi o escriba e sacerdote que liderou um grupo de judeus de volta a Jerusalém e restaurou a lei de Moisés?",
-    answers: [
-      { text: "Esdras", correct: true },
-      { text: "Neemias", correct: false },
-      { text: "Zorobabel", correct: false },
-      { text: "Josué", correct: false }
-    ]
-  },
-  {
-    question: "Em qual livro da Bíblia encontramos a profecia das 'setenta semanas'?",
-    answers: [
-      { text: "Daniel", correct: true },
-      { text: "Apocalipse", correct: false },
-      { text: "Isaías", correct: false },
-      { text: "Ezequiel", correct: false }
-    ]
-  },
-  {
-    question: "Quem foi a única mulher a julgar Israel?",
-    answers: [
-      { text: "Rute", correct: false },
-      { text: "Ana", correct: false },
-      { text: "Débora", correct: true },
-      { text: "Ester", correct: false }
-    ]
-  },
-  {
-    question: "Em qual livro da Bíblia é mencionada a história de Balaão e sua jumenta?",
-    answers: [
-      { text: "Gênesis", correct: false },
-      { text: "Êxodo", correct: false },
-      { text: "Números", correct: true },
-      { text: "Deuteronômio", correct: false }
-    ]
-  },
-  {
-    question: "Quem era o discípulo que Jesus amava?",
-    answers: [
-      { text: "Pedro", correct: false },
-      { text: "Tiago", correct: false },
-      { text: "João", correct: true },
-      { text: "André", correct: false }
-    ]
-  },
-  {
-    question: "Qual foi a resposta de Jesus quando perguntado sobre o maior mandamento da Lei?",
-    answers: [
-      { text: "Não matarás.", correct: false },
-      { text: "Não adulterarás.", correct: false },
-      { text: "Amarás o Senhor teu Deus de todo o teu coração.", correct: true },
-      { text: "Honra teu pai e tua mãe.", correct: false }
-    ]
-  }
-];
+      {
+        question: "Onde Jesus nasceu?",
+        answers: [
+          { text: "Belém", correct: true },
+          { text: "Nazaré", correct: false },
+          { text: "Jerusalém", correct: false },
+          { text: "Jericó", correct: false }
+        ]
+      },
+      {
+        question: "Qual era a profissão de Jesus antes de começar seu ministério?",
+        answers: [
+          { text: "Pescador", correct: false },
+          { text: "Agricultor", correct: false },
+          { text: "Tecelão", correct: false },
+          { text: "Carpinteiro", correct: true }
+        ]
+      },
+      {
+        question: "Quantos discípulos Jesus escolheu para serem seus apóstolos?",
+        answers: [
+          { text: "10", correct: false },
+          { text: "12", correct: true },
+          { text: "7", correct: false },
+          { text: "5", correct: false }
+        ]
+      },
+      {
+        question: "Quem negou Jesus três vezes antes do galo cantar?",
+        answers: [
+          { text: "Tiago", correct: false },
+          { text: "João", correct: false },
+          { text: "Pedro", correct: true },
+          { text: "André", correct: false }
+        ]
+      },
+      {
+        question: "Quantos dias Jesus passou no deserto sendo tentado por Satanás?",
+        answers: [
+          { text: "7 dias", correct: false },
+          { text: "12 dias", correct: false },
+          { text: "40 dias", correct: true },
+          { text: "20 dias", correct: false }
+        ]
+      },
+      {
+        question: "Qual foi a primeira tentação de Jesus no deserto?",
+        answers: [
+          { text: "Pular do pináculo do templo", correct: false },
+          { text: "Adorar Satanás em troca de poder", correct: false },
+          { text: "Converter água em vinho", correct: false },
+          { text: "Transformar pedras em pães", correct: true }
+        ]
+      },
+      {
+        question: "Onde Jesus realizou seu primeiro milagre?",
+        answers: [
+          { text: "No templo em Jerusalém", correct: false },
+          { text: "Em um casamento em Caná da Galileia", correct: true },
+          { text: "À beira do Mar da Galileia", correct: false },
+          { text: "Em uma sinagoga em Nazaré", correct: false }
+        ]
+      },
+      {
+        question: "Qual foi a última refeição de Jesus com seus discípulos antes de sua crucificação?",
+        answers: [
+          { text: "Almoço", correct: false },
+          { text: "Ceia", correct: true },
+          { text: "Café da manhã", correct: false },
+          { text: "Jantar", correct: false }
+        ]
+      },
+      {
+        question: "Quem foi enviado para anunciar o nascimento de Jesus a Maria?",
+        answers: [
+          { text: "O anjo Gabriel", correct: true },
+          { text: "O profeta Isaías", correct: false },
+          { text: "O rei Herodes", correct: false },
+          { text: "O sumo sacerdote Caifás", correct: false }
+        ]
+      },
+      {
+        question: "Qual dos discípulos de Jesus duvidou de sua ressurreição até ver Jesus com seus próprios olhos?",
+        answers: [
+          { text: "Tomé", correct: true },
+          { text: "Pedro", correct: false },
+          { text: "João", correct: false },
+          { text: "André", correct: false }
+        ]
+      }
+    ];
 </script>
