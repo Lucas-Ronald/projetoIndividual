@@ -139,9 +139,46 @@
       );
   }
 
+  function updateTop5Pontuacao() {
+    fetch("/medidas/top-5-pontuacao")
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok " + response.statusText);
+            }
+            return response.json();
+        })
+        .then((data) => {
+            console.log("Dados recebidos:", data);
+            if (!Array.isArray(data)) {
+                throw new Error("Dados recebidos não são um array");
+            }
+
+            // Mapear os dados recebidos para as séries de dados e categorias
+            const seriesData = data.map(item => item.pontuacao);
+            const categories = data.map(item => item.usuario);
+
+            const options = {
+                series: [{
+                    data: seriesData
+                }],
+                chart: {
+                    type: 'bar'
+                },
+                xaxis: {
+                    categories: categories
+                }
+            };
+
+            const chart = new ApexCharts(document.querySelector("#bar-chart"), options);
+            chart.render();
+        })
+        .catch((error) => console.error("Erro ao buscar o top 5 de pontuação:", error));
+}
+
   // Chamar a função ao carregar a página
   document.addEventListener("DOMContentLoaded", updateHistoriasCount);
   document.addEventListener("DOMContentLoaded", updateUsuariosCount);
+  document.addEventListener("DOMContentLoaded", updateTop5Pontuacao);
 
   // ---------- CHARTS ----------
 
@@ -150,7 +187,7 @@
     series: [
       {
         data: [10, 8, 6, 4, 2],
-        name: "Products",
+        name: "Pontos",
       },
     ],
     chart: {
@@ -261,7 +298,7 @@
     series: [
       {
         data: [10, 8, 6, 4, 2],
-        name: "Products",
+        name: "Votos",
       },
     ],
     chart: {
@@ -372,4 +409,6 @@
     barChartOptions2
   );
   barChart2.render();
+
+  
 </script>

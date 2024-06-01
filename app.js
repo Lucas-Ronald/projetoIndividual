@@ -19,7 +19,7 @@ var historiaRouter = require('./src/routes/historiaRouter');
 var indexRouter = require("./src/routes/index");
 var usuarioRouter = require("./src/routes/usuarios");
 // var avisosRouter = require("./src/routes/avisos");
-// var medidasRouter = require("./src/routes/medidas");
+var medidaRouter = require("./src/routes/medidaRouter");
 // var aquariosRouter = require("./src/routes/aquarios");
 // var empresasRouter = require("./src/routes/empresas");
 
@@ -33,7 +33,7 @@ app.use('/historia', historiaRouter);
 app.use("/", indexRouter);
 app.use("/usuarios", usuarioRouter);
 // app.use("/avisos", avisosRouter);
-// app.use("/medidas", medidasRouter);
+app.use("/medidas", medidaRouter);
 // app.use("/aquarios", aquariosRouter);
 // app.use("/empresas", empresasRouter);
 
