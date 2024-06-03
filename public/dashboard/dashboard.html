@@ -1,95 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>JesusVive | Dashboard</title>
-    <link rel="icon" href="../assets/img/people.png" />
 
-    <!-- Montserrat Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>JesusVive | Dashboard</title>
+  <link rel="icon" href="../assets/img/people.png" />
 
-    <!-- Material Icons -->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
-      rel="stylesheet"
-    />
+  <!-- Montserrat Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="../css/styleDash.css" />
-  </head>
-  <body>
-    <div class="grid-container">
-      <header id="header">
-        <div class="container">
-          <div class="flex">
-            <a href="#"
-              ><img
-                src="../assets/img/people.png"
-                class="logo-jesus"
-                alt="jesusLogo"
-            /></a>
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
 
-            <nav>
-              <ul>
-                <li><a href="./histórias.html">Histórias</a></li>
-                <li><a href="./quiz.html">Quiz</a></li>
-                <li><a href="#">Mensagem</a></li>
-                <li><a href="./dashboard.html">Dashboard</a></li>
-              </ul>
-            </nav>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/styleDash.css" />
+</head>
 
-            <div class="btn-entrar">
-              <a href="./telaLogin.html"><button>ENTRAR</button></a>
-            </div>
+<body>
+  <div class="grid-container">
+    <header id="header">
+      <div class="container">
+        <div class="flex">
+          <a href="#"><img src="../assets/img/people.png" class="logo-jesus" alt="jesusLogo" /></a>
+
+          <nav>
+            <ul>
+              <li><a href="./histórias.html">Histórias</a></li>
+              <li><a href="./quiz.html">Quiz</a></li>
+              <li><a href="#">Mensagem</a></li>
+              <li><a href="./dashboard.html">Dashboard</a></li>
+            </ul>
+          </nav>
+
+          <div class="btn-entrar">
+            <a href="./telaLogin.html"><button>ENTRAR</button></a>
           </div>
         </div>
-      </header>
+      </div>
+    </header>
 
-      <!-- Main -->
-      <main class="main-container">
-        <div class="main-title">
-          <h2>DASHBOARD</h2>
+    <!-- Main -->
+    <main class="main-container">
+      <div class="main-title">
+        <h2>DASHBOARD</h2>
+      </div>
+
+      <div class="main-cards">
+        <div class="card">
+          <div class="card-inner">
+            <h3>HISTÓRIAS</h3>
+          </div>
+          <h1 id="historias-count">0</h1>
         </div>
 
-        <div class="main-cards">
-          <div class="card">
-            <div class="card-inner">
-              <h3>HISTÓRIAS</h3>
-            </div>
-            <h1 id="historias-count">0</h1>
+        <div class="card">
+          <div class="card-inner">
+            <h3>USUÁRIOS</h3>
           </div>
+          <h1 id="usuarios-count">0</h1>
+        </div>
+      </div>
 
-          <div class="card">
-            <div class="card-inner">
-              <h3>USUÁRIOS</h3>
-            </div>
-            <h1 id="usuarios-count">0</h1>
-          </div>
+      <div class="charts">
+        <div class="charts-card">
+          <h2 class="chart-title">Top 5</h2>
+          <div id="bar-chart"></div>
         </div>
 
-        <div class="charts">
-          <div class="charts-card">
-            <h2 class="chart-title">Top 5</h2>
-            <div id="bar-chart"></div>
-          </div>
-
-          <div class="charts-card">
-            <h2 class="chart-title">Top 5 Histórias</h2>
-            <div id="bar-chart2"></div>
-          </div>
+        <div class="charts-card">
+          <h2 class="chart-title">Top 5 Histórias</h2>
+          <div id="bar-chart2"></div>
         </div>
-      </main>
-      <!-- End Main -->
-    </div>
+      </div>
+    </main>
+    <!-- End Main -->
+  </div>
 
-    <!-- Scripts -->
-    <!-- ApexCharts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
-  </body>
+  <!-- Scripts -->
+  <!-- ApexCharts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
+</body>
+
 </html>
 
 <script>
@@ -141,39 +134,136 @@
 
   function updateTop5Pontuacao() {
     fetch("/medidas/top-5-pontuacao")
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error("Network response was not ok " + response.statusText);
-            }
-            return response.json();
-        })
-        .then((data) => {
-            console.log("Dados recebidos:", data);
-            if (!Array.isArray(data)) {
-                throw new Error("Dados recebidos não são um array");
-            }
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok " + response.statusText);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Dados recebidos:", data);
+        if (!Array.isArray(data)) {
+          throw new Error("Dados recebidos não são um array");
+        }
 
-            // Mapear os dados recebidos para as séries de dados e categorias
-            const seriesData = data.map(item => item.pontuacao);
-            const categories = data.map(item => item.usuario);
+        // Mapear os dados recebidos para as séries de dados e categorias
+        const seriesData = data.map(item => item.ponto);
+        const categories = data.map(item => item.usuario);
 
-            const options = {
-                series: [{
-                    data: seriesData
-                }],
-                chart: {
-                    type: 'bar'
-                },
-                xaxis: {
-                    categories: categories
-                }
-            };
 
-            const chart = new ApexCharts(document.querySelector("#bar-chart"), options);
-            chart.render();
-        })
-        .catch((error) => console.error("Erro ao buscar o top 5 de pontuação:", error));
-}
+        // BAR CHART 1
+        const barChartOptions = {
+          series: [
+            {
+              data: seriesData,
+              name: "Pontos",
+            },
+          ],
+          chart: {
+            type: "bar",
+            background: "transparent",
+            height: 350,
+            toolbar: {
+              show: false,
+            },
+          },
+          colors: ["#695c5a", "#695c5a", "#695c5a", "#695c5a", "#695c5a"],
+          plotOptions: {
+            bar: {
+              distributed: true,
+              borderRadius: 4,
+              horizontal: false,
+              columnWidth: "40%",
+            },
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          fill: {
+            opacity: 1,
+          },
+          grid: {
+            borderColor: "#55596e",
+            yaxis: {
+              lines: {
+                show: true,
+              },
+            },
+            xaxis: {
+              lines: {
+                show: true,
+              },
+            },
+          },
+          legend: {
+            labels: {
+              colors: "#f5f7ff",
+            },
+            show: true,
+            position: "top",
+          },
+          stroke: {
+            colors: ["transparent"],
+            show: true,
+            width: 2,
+          },
+          tooltip: {
+            shared: true,
+            intersect: false,
+            theme: "dark",
+          },
+          xaxis: {
+            categories: categories,
+            title: {
+              style: {
+                color: "#f5f7ff",
+              },
+            },
+            axisBorder: {
+              show: true,
+              color: "#55596e",
+            },
+            axisTicks: {
+              show: true,
+              color: "#55596e",
+            },
+            labels: {
+              style: {
+                colors: "#f5f7ff",
+              },
+            },
+          },
+          yaxis: {
+            title: {
+              text: "Pontos",
+              style: {
+                color: "#f5f7ff",
+              },
+            },
+            axisBorder: {
+              color: "#55596e",
+              show: true,
+            },
+            axisTicks: {
+              color: "#55596e",
+              show: true,
+            },
+            labels: {
+              style: {
+                colors: "#f5f7ff",
+              },
+            },
+          },
+        };
+
+        const barChart = new ApexCharts(
+          document.querySelector("#bar-chart"),
+          barChartOptions
+        );
+        barChart.render();
+      })
+      .catch((error) => console.error("Erro ao buscar o top 5 de pontuação:", error));
+  }
 
   // Chamar a função ao carregar a página
   document.addEventListener("DOMContentLoaded", updateHistoriasCount);
@@ -181,117 +271,6 @@
   document.addEventListener("DOMContentLoaded", updateTop5Pontuacao);
 
   // ---------- CHARTS ----------
-
-  // BAR CHART 1
-  const barChartOptions = {
-    series: [
-      {
-        data: [10, 8, 6, 4, 2],
-        name: "Pontos",
-      },
-    ],
-    chart: {
-      type: "bar",
-      background: "transparent",
-      height: 350,
-      toolbar: {
-        show: false,
-      },
-    },
-    colors: ["#695c5a", "#695c5a", "#695c5a", "#695c5a", "#695c5a"],
-    plotOptions: {
-      bar: {
-        distributed: true,
-        borderRadius: 4,
-        horizontal: false,
-        columnWidth: "40%",
-      },
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    fill: {
-      opacity: 1,
-    },
-    grid: {
-      borderColor: "#55596e",
-      yaxis: {
-        lines: {
-          show: true,
-        },
-      },
-      xaxis: {
-        lines: {
-          show: true,
-        },
-      },
-    },
-    legend: {
-      labels: {
-        colors: "#f5f7ff",
-      },
-      show: true,
-      position: "top",
-    },
-    stroke: {
-      colors: ["transparent"],
-      show: true,
-      width: 2,
-    },
-    tooltip: {
-      shared: true,
-      intersect: false,
-      theme: "dark",
-    },
-    xaxis: {
-      categories: ["Usuario1", "Usuario2", "Usuario3", "Usuario4", "Usuario5"],
-      title: {
-        style: {
-          color: "#f5f7ff",
-        },
-      },
-      axisBorder: {
-        show: true,
-        color: "#55596e",
-      },
-      axisTicks: {
-        show: true,
-        color: "#55596e",
-      },
-      labels: {
-        style: {
-          colors: "#f5f7ff",
-        },
-      },
-    },
-    yaxis: {
-      title: {
-        text: "Pontos",
-        style: {
-          color: "#f5f7ff",
-        },
-      },
-      axisBorder: {
-        color: "#55596e",
-        show: true,
-      },
-      axisTicks: {
-        color: "#55596e",
-        show: true,
-      },
-      labels: {
-        style: {
-          colors: "#f5f7ff",
-        },
-      },
-    },
-  };
-
-  const barChart = new ApexCharts(
-    document.querySelector("#bar-chart"),
-    barChartOptions
-  );
-  barChart.render();
 
   // BAR CHART 2
   const barChartOptions2 = {
@@ -410,5 +389,5 @@
   );
   barChart2.render();
 
-  
+
 </script>
