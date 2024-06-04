@@ -16,4 +16,8 @@ router.get("/contar", function (req, res) {
     usuarioController.contarUsuarios(req, res);
 });
 
+router.post("/registrarAcertos", function (req, res) {
+    usuarioController.registrarAcertos(req, res);
+});
+
 module.exports = router;

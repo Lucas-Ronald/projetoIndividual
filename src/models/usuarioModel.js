@@ -30,8 +30,17 @@ function contarUsuarios() {
     return database.executar(instrucaoSql);
 }
 
+function registrarAcertos(usuario, acertos) {
+    var instrucaoSql = `
+        INSERT INTO pontuacao (usuario, ponto, data) VALUES ('${usuario}', ${acertos}, NOW());
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     autenticar,
     cadastrar,
     contarUsuarios,
+    registrarAcertos,
 };

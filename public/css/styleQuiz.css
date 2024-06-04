@@ -186,3 +186,24 @@ body{
     background-color: #a10101;
 }
 
+.hello {
+  text-align: center;
+  margin-top: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hello h3 {
+  color: #695c5a;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.hello h3 span {
+  color: #695c5a;
+  font-weight: bold;
+}
+

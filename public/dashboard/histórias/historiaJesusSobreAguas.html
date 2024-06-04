@@ -17,19 +17,18 @@
       <div class="flex-header">
 
         <a href="./index.html"><img src="../../assets/img/people.png" class="logo-jesus" alt="jesusLogo"></a>
-
         <nav>
           <ul>
-            <li class="current"><a>Histórias</a></li>
-            <li><a href="./quiz.html">Quiz</a></li>
+            <li><a href="../histórias.html">Histórias</a></li>
+            <li><a href="../quiz.html">Quiz</a></li>
             <li><a>Mensagem</a></li>
             <li><a href="../dashboard.html">Dashboard</a></li>
           </ul>
         </nav>
 
-        <div class="btn-entrar">
-          <a href="./telaLogin.html"><button>ENTRAR</button></a>
-        </div>
+        <div class="hello">
+          <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+      </div>
 
       </div>
 
@@ -146,6 +145,9 @@
 </html>
 
 <script>
+     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+
     function mostrarMensagem() {
       var divMensagem = document.getElementById("div_mensagem");
       if (divMensagem) { // Verifica se o elemento foi encontrado
