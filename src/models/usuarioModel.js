@@ -16,7 +16,7 @@ function cadastrar(usuario, email, senha) {
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucaoSql = `
-        INSERT INTO usuario (NomeUsuario, email, senha) VALUES ('${usuario}', '${email}', '${senha}');
+        INSERT INTO usuario (NomeUsuario, email, senha, dataCadastro) VALUES ('${usuario}', '${email}', '${senha}', NOW());
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -32,7 +32,7 @@ function contarUsuarios() {
 
 function registrarAcertos(usuario, acertos) {
     var instrucaoSql = `
-        INSERT INTO pontuacao (usuario, ponto, data) VALUES ('${usuario}', ${acertos}, NOW());
+        INSERT INTO ranking (fkUsuario, fkQuiz, data, pontuacao) VALUES ('${usuario}', 1, NOW(), ${acertos});
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);

@@ -25,7 +25,6 @@
             <ul>
               <li><a href="./histórias.html">Histórias</a></li>
               <li><a href="./quiz.html">Quiz</a></li>
-              <li><a href="#">Mensagem</a></li>
               <li><a href="./dashboard.html">Dashboard</a></li>
             </ul>
           </nav>
@@ -119,8 +118,8 @@
           throw new Error("Dados recebidos não são um array");
         }
 
-        const seriesData = data.map(item => item.ponto);
-        const categories = data.map(item => item.usuario);
+        const seriesData = data.map(item => item.Pontuacao);
+        const categories = data.map(item => item.Nome);
 
 
         // Gráfico

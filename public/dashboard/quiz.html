@@ -22,7 +22,6 @@
           <ul>
             <li><a href="./histórias.html">Histórias</a></li>
             <li><a href="./quiz.html">Quiz</a></li>
-            <li><a href="#">Mensagem</a></li>
             <li><a href="./dashboard.html">Dashboard</a></li>
           </ul>
         </nav>
@@ -45,7 +44,11 @@
       </div>
     </div>
     <div class="controls-container">
+      <div class="hello_quiz">
+        <h3>Bem-vindo ao quiz, <span id="b_usuario_quiz">usuário</span>!</h3>
+      </div><br>
       <button class="start-quiz button">Começar quiz!</button>
+      <a href="./histórias.html"><button class="historias button">Voltar para histórias</button></a>
       <button class="next-question button hide">Próxima pergunta</button>
     </div>
   </div>
@@ -55,12 +58,15 @@
 
 <script>
   b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+  b_usuario_quiz.innerHTML = sessionStorage.NOME_USUARIO;
   const nomeUsuario = sessionStorage.NOME_USUARIO;
   const startGameButton = document.querySelector(".start-quiz");
   const questionsContainer = document.querySelector(".questions-container");
   const answersContainer = document.querySelector(".answers-container");
   const questionText = document.querySelector(".question");
   const nextQuestionButton = document.querySelector(".next-question");
+  const historiasButton = document.querySelector(".historias")
+  const helloQuiz = document.querySelector(".hello_quiz")
 
   startGameButton.addEventListener("click", startGame);
   nextQuestionButton.addEventListener("click", displayNextQuestion);
@@ -70,6 +76,8 @@
 
   function startGame() {
     startGameButton.classList.add("hide");
+    historiasButton.classList.add("hide");
+    helloQuiz.classList.add("hide");
     questionsContainer.classList.remove("hide");
     displayNextQuestion();
   }
@@ -143,9 +151,9 @@
 
     questionsContainer.innerHTML = `
         <p class = "final-message">
-          Olá ${nomeUsuario}<br>
+          Fim do quiz ${nomeUsuario}<br>
             Você acertou ${totalCorrect} de ${totalQuestion} questões!
-            <span>${message}</span>
+            <p>${message}</p>
         </p>
         <button onclick=window.location.reload() class = "button">
             Refazer teste
