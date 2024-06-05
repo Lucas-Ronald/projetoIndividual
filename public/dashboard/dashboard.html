@@ -118,8 +118,13 @@
           throw new Error("Dados recebidos não são um array");
         }
 
-        const seriesData = data.map(item => item.Pontuacao);
-        const categories = data.map(item => item.Nome);
+        const seriesData = [];
+        const categories = [];
+
+        for (let posicao = 0; posicao < data.length; posicao++) {
+          seriesData.push(data[posicao].Pontuacao);
+          categories.push(data[posicao].Nome);
+        }
 
 
         // Gráfico
