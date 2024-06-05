@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JesusVive | Login e Cadastro</title>
     <link rel="stylesheet" href="./css/styleLogin.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"/>
-    <link rel="icon" href="./assets/img/people.png">
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
+    />
+    <link rel="icon" href="./assets/img/people.png" />
     <script src="./js/sessao.js"></script>
 
     <!--GOOGLE FONT-->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,12 +25,16 @@
     />
     <!--GOOGLE FONT-->
   </head>
+
   <body>
     <header id="header">
       <div class="container">
         <div class="flex">
           <a href="./index.html"
-            ><img src="./assets/img/people.png" class="logo-jesus" alt="jesusLogo"
+            ><img
+              src="./assets/img/people.png"
+              class="logo-jesus"
+              alt="jesusLogo"
           /></a>
 
           <div class="btn-entrar">
@@ -216,8 +225,8 @@
           console.log(resposta);
 
           div_mensagem_login.classList.remove("disabled");
-            div_mensagem_login.classList.add("erro");
-            div_mensagem_login.innerHTML = `<p style="text-align: center; color: #5f4336; background-color: #ffffff;">Login realizado com sucesso!</p>`;
+          div_mensagem_login.classList.add("erro");
+          div_mensagem_login.innerHTML = `<p style="text-align: center; color: #5f4336; background-color: #ffffff;">Login realizado com sucesso!</p>`;
 
           resposta.json().then((json) => {
             console.log(json);

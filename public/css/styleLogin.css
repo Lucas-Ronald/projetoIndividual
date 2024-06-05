@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
 }
 
@@ -26,7 +26,6 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  /* background-color: #5f4336fd; */
 }
 
 header a {
@@ -52,8 +51,9 @@ header i:hover {
   font-size: 45px;
   color: #ffffff;
 }
-/* LOGIN E CADASTRO */
 
+
+/* LOGIN E CADASTRO */
 body {
   display: flex;
   justify-content: center;
@@ -74,16 +74,6 @@ body {
   padding: 40px;
   overflow: hidden;
 }
-
-/* .wrapper:hover{
-    animation: animate 1s linear infinite;
-}
-
-@keyframes  animate{
-    100%{
-        filter: hue-rotate(360deg);
-    }
-} */
 
 .form-wrapper {
   display: flex;

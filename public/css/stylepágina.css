@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 html {
@@ -79,31 +79,31 @@ header a:hover {
 
 header .btn-entrar button {
   background-color: #695c5a;
-  color: #ffffff; /* Texto branco para contraste */
+  color: #ffffff; 
   border: 1;
   border-color: #ffffff;
-  padding: 10px 20px; /* Espaçamento interno */
-  font-size: 16px; /* Tamanho da fonte */
-  border-radius: 5px; /* Bordas arredondadas */
-  cursor: pointer; /* Cursor em formato de mão */
-  transition: all 0.3s ease; /* Transição suave */
+  padding: 10px 20px; 
+  font-size: 16px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: all 0.3s ease; 
 }
 
 header.rolagem .btn-entrar button {
   background-color: #695c5a;
-  color: #ffffff83; /* Texto branco para contraste */
+  color: #ffffff83; 
   border: 1;
   border-color: rgba(255, 255, 255, 0.548);
-  padding: 10px 20px; /* Espaçamento interno */
-  font-size: 16px; /* Tamanho da fonte */
-  border-radius: 5px; /* Bordas arredondadas */
-  cursor: pointer; /* Cursor em formato de mão */
-  transition: all 0.3s ease; /* Transição suave */
+  padding: 10px 20px;
+  font-size: 16px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: all 0.3s ease; 
 }
 
 header .btn-entrar button:hover {
   background-color: #695c5a;
-  color: #ffffff; /* Texto branco para contraste */
+  color: #ffffff; 
   border: 1;
   border-color: #ffffff;
   text-shadow: 2px 2px 3px rgb(0, 0, 0, 2);
@@ -120,7 +120,6 @@ header .btn-entrar button:hover {
   background-size: cover;
   background-color: #080808e5;
   background-blend-mode: multiply;
-  /* filter: brightness(40%); */
 }
 
 /* TOPO DO SITE */
@@ -157,39 +156,39 @@ section.banner {
 /* QUEM FOI JESUS */
 .Quem-foi-jesus {
   display: flex;
-  width: 100%; /* Ocupa toda a largura do viewport */
-  height: 100vh; /* Ocupa toda a altura do viewport */
+  width: 100%; 
+  height: 100vh; 
   background-color: #ffffff;
   justify-content: center;
 }
 
 .img-quem-foi-jesus {
-  flex: 1; /* A imagem ocupa parte do espaço */
+  flex: 1; 
   padding: 50px;
 }
 
 .img-quem-foi-jesus img {
-  width: 925px; /* Ajusta a largura da imagem para o tamanho do contêiner */
-  height: 592px; /* Mantém a proporção da imagem */
+  width: 925px; 
+  height: 592px; 
 }
 
 .txt-quem-foi-jesus {
-  flex: 2; /* O texto ocupa mais espaço */
+  flex: 2; 
   text-align: center;
   color: #4f4341;
-  top: 680px; /* Posição vertical (y) */
+  top: 680px; 
   font-size: 16px;
   padding: 25px;
   padding-top: 0;
 }
 
 .txt-quem-foi-jesus p {
-  flex: 2; /* O texto ocupa mais espaço */
+  flex: 2; 
   text-align: justify;
   color: #4f4341;
-  top: 680px; /* Posição vertical (y) */
+  top: 680px; 
   font-size: 18px;
-  left: 59px; /* Posição horizontal (x) */
+  left: 59px; 
   padding: 20px;
 }
 
@@ -200,7 +199,6 @@ section.banner {
   font-size: 65px;
   padding: 20px;
 }
-
 
 /*=== FOOTER ===========================*/
 footer {
@@ -266,7 +264,7 @@ footer .container-footer a:hover {
 
 .hello h3 {
   color: #695c5a;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 20px;
   margin-bottom: 0;
 }

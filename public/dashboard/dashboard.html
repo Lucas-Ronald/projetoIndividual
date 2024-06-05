@@ -6,16 +6,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>JesusVive | Dashboard</title>
   <link rel="icon" href="../assets/img/people.png" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
+  <link rel="stylesheet" href="../css/styleDash.css" />
 
-  <!-- Montserrat Font -->
+  <!--GOOGLE FONT-->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
-
-  <!-- Material Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="../css/styleDash.css" />
 </head>
 
 <body>
@@ -36,12 +32,12 @@
 
           <div class="hello">
             <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-        </div>
+          </div>
         </div>
       </div>
     </header>
 
-    <!-- Main -->
+    <!--  Inicio Main -->
     <main class="main-container">
       <div class="main-title">
         <h2>RANKING</h2>
@@ -71,40 +67,17 @@
 
       </div>
     </main>
-    <!-- End Main -->
+    <!-- Fim Main -->
   </div>
-
-  <!-- Scripts -->
-  <!-- ApexCharts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
 </body>
 
 </html>
 
 <script>
 
-b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+  b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-  // SIDEBAR TOGGLE
-
-  let sidebarOpen = false;
-  const sidebar = document.getElementById("sidebar");
-
-  function openSidebar() {
-    if (!sidebarOpen) {
-      sidebar.classList.add("sidebar-responsive");
-      sidebarOpen = true;
-    }
-  }
-
-  function closeSidebar() {
-    if (sidebarOpen) {
-      sidebar.classList.remove("sidebar-responsive");
-      sidebarOpen = false;
-    }
-  }
-
-  // Função para atualizar o número de histórias
+  // Função para atualizar o número de histórias cadastradas
   function updateHistoriasCount() {
     fetch("/historia/contar")
       .then((response) => response.json())
@@ -118,6 +91,7 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
       );
   }
 
+  // Função para atualizar o número de usuários cadastrados
   function updateUsuariosCount() {
     fetch("/usuarios/contar")
       .then((response) => response.json())
@@ -130,6 +104,7 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
       );
   }
 
+  // Função pegar o top 5 de usuários na tabela ranking
   function updateTop5Pontuacao() {
     fetch("/medidas/top-5-pontuacao")
       .then((response) => {
@@ -144,12 +119,11 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
           throw new Error("Dados recebidos não são um array");
         }
 
-        // Mapear os dados recebidos para as séries de dados e categorias
         const seriesData = data.map(item => item.ponto);
         const categories = data.map(item => item.usuario);
 
 
-        // BAR CHART 1
+        // Gráfico
         const barChartOptions = {
           series: [
             {
@@ -165,7 +139,7 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
               show: false,
             },
           },
-          colors: ["#695c5a", "#695c5a", "#695c5a", "#695c5a", "#695c5a"],
+          colors: ["#FFD700", "#C0C0C0", "#CD7F32", "#695c5a", "#695c5a"],
           plotOptions: {
             bar: {
               distributed: true,
@@ -263,7 +237,7 @@ b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
       .catch((error) => console.error("Erro ao buscar o top 5 de pontuação:", error));
   }
 
-  // Chamar a função ao carregar a página
+  // Chama as funções ao carregar a página
   document.addEventListener("DOMContentLoaded", updateHistoriasCount);
   document.addEventListener("DOMContentLoaded", updateUsuariosCount);
   document.addEventListener("DOMContentLoaded", updateTop5Pontuacao);

@@ -2,17 +2,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   overflow-x: hidden;
   background-color: #000000;
   color: #9e9ea4;
 }
-
 
 /* ---------- HEADER ---------- */
 .container {
@@ -38,7 +38,6 @@ header {
   transition: 0.7s;
   z-index: 100;
 }
-
 
 header ul {
   list-style-type: none;
@@ -70,19 +69,19 @@ header a:hover {
 
 header .btn-entrar button {
   background-color: #695c5a;
-  color: #ffffff; /* Texto branco para contraste */
+  color: #ffffff;
   border: 1;
   border-color: #ffffff;
-  padding: 10px 20px; /* Espaçamento interno */
-  font-size: 16px; /* Tamanho da fonte */
-  border-radius: 5px; /* Bordas arredondadas */
-  cursor: pointer; /* Cursor em formato de mão */
-  transition: all 0.3s ease; /* Transição suave */
+  padding: 10px 20px;
+  font-size: 16px; 
+  border-radius: 5px;
+  cursor: pointer; 
+  transition: all 0.3s ease;
 }
 
 header .btn-entrar button:hover {
   background-color: #695c5a;
-  color: #ffffff; /* Texto branco para contraste */
+  color: #ffffff;
   border: 1;
   border-color: #ffffff;
   text-shadow: 2px 2px 3px rgb(0, 0, 0, 2);
@@ -90,7 +89,6 @@ header .btn-entrar button:hover {
 }
 
 /* ---------- MAIN ---------- */
-
 .main-container {
   margin-top: 100px;
   grid-area: main;
@@ -121,7 +119,7 @@ header .btn-entrar button:hover {
   border-radius: 5px;
 }
 
-.card{
+.card {
   background-color: #695c5a;
 }
 
@@ -148,7 +146,7 @@ header .btn-entrar button:hover {
   box-sizing: border-box;
   border-radius: 5px;
   box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
-  width: 50%; /* Define a largura como 50% do contêiner .charts */
+  width: 50%; 
 }
 
 .chart-title {
@@ -157,56 +155,7 @@ header .btn-entrar button:hover {
   justify-content: center;
 }
 
-
-/* ---------- MEDIA QUERIES ---------- */
-
-/* Medium <= 992px */
-
-@media screen and (max-width: 992px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 3fr;
-    grid-template-areas:
-      'header'
-      'main';
-  }
-
-  #sidebar {
-    display: none;
-  }
-
-  .menu-icon {
-    display: inline;
-  }
-
-  .sidebar-title > span {
-    display: inline;
-  }
-}
-
-/* Small <= 768px */
-
-@media screen and (max-width: 768px) {
-  .main-cards {
-    grid-template-columns: 1fr;
-    gap: 10px;
-    margin-bottom: 0;
-  }
-
-  .charts {
-    grid-template-columns: 1fr;
-    margin-top: 30px;
-  }
-}
-
-/* Extra Small <= 576px */
-
-@media screen and (max-width: 576px) {
-  .hedaer-left {
-    display: none;
-  }
-}
-
+/* ---------- Olá usuário ---------- */
 .hello {
   text-align: center;
   margin-top: 20px;
@@ -218,7 +167,7 @@ header .btn-entrar button:hover {
 
 .hello h3 {
   color: #695c5a;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 20px;
   margin-bottom: 0;
 }

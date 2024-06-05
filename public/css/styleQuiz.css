@@ -1,189 +1,188 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-  }
-  
-  .container-header {
-    width: 100%;
-  }
-  
-  .flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .logo-jesus {
-    width: 80px;
-  }
-  
-  header {
-    width: 100%;
-    padding: 20px 4%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    transition: 0.7s;
-    z-index: 100;
-  }
-  
-  header.rolagem {
-    background-color: #5f4336;
-    padding: 30px 4%;
-  }
-  
-  header.rolagem a {
-    color: #ffffff;
-  }
-  
-  header ul {
-    list-style-type: none;
-  }
-  
-  header ul li {
-    display: inline-block;
-    margin: 0 40px;
-  }
-  
-  header ul li a {
-    color: #ffffff;
-    text-decoration: none;
-  }
-  
-  header a {
-    color: #ffffff;
-    text-decoration: none;
-    display: inline-block;
-    transition: 0.1s;
-    text-shadow: none;
-  }
-  
-  header a:hover {
-    color: #fffefe;
-    transform: scale(1.05);
-    text-shadow: 3px 3px 4px rgba(0, 0, 0, 10);
-  }
-  
-  header .btn-entrar button {
-    background-color: #695c5a;
-    color: #ffffff; /* Texto branco para contraste */
-    border: 1;
-    border-color: #ffffff;
-    padding: 10px 20px; /* Espaçamento interno */
-    font-size: 16px; /* Tamanho da fonte */
-    border-radius: 5px; /* Bordas arredondadas */
-    cursor: pointer; /* Cursor em formato de mão */
-    transition: all 0.3s ease; /* Transição suave */
-  }
-  
-  header .btn-entrar button:hover {
-    background-color: #695c5a;
-    color: #ffffff; /* Texto branco para contraste */
-    border: 1;
-    border-color: #ffffff;
-    text-shadow: 2px 2px 3px rgb(0, 0, 0, 2);
-    box-shadow: 0px 0px 8px #423129;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.container-header {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-jesus {
+  width: 80px;
+}
+
+header {
+  width: 100%;
+  padding: 20px 4%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 0.7s;
+  z-index: 100;
+}
+
+header.rolagem {
+  background-color: #5f4336;
+  padding: 30px 4%;
+}
+
+header.rolagem a {
+  color: #ffffff;
+}
+
+header ul {
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+  margin: 0 40px;
+}
+
+header ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+header a {
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.1s;
+  text-shadow: none;
+}
+
+header a:hover {
+  color: #fffefe;
+  transform: scale(1.05);
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 10);
+}
+
+header .btn-entrar button {
+  background-color: #695c5a;
+  color: #ffffff;
+  border: 1;
+  border-color: #ffffff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+header .btn-entrar button:hover {
+  background-color: #695c5a;
+  color: #ffffff;
+  border: 1;
+  border-color: #ffffff;
+  text-shadow: 2px 2px 3px rgb(0, 0, 0, 2);
+  box-shadow: 0px 0px 8px #423129;
+}
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-body{
-    color: #FFFFFF;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url("https://pensandobiblia.blog.br/wp-content/uploads/2023/07/Como-morreram-os-apostolos-de-Jesus-Cristo-scaled.webp");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #080808e5;
-    background-blend-mode: multiply;
+body {
+  color: #ffffff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://pensandobiblia.blog.br/wp-content/uploads/2023/07/Como-morreram-os-apostolos-de-Jesus-Cristo-scaled.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #080808e5;
+  background-blend-mode: multiply;
 }
 
-.container{
-    width: 90%;
-    max-width: 800px;
+.container {
+  width: 90%;
+  max-width: 800px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.questions-container{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
+.questions-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
 }
 
 .question {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
 }
 
-.answers-container{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+.answers-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 
-.next-question{
-    margin-top: 32px;
+.next-question {
+  margin-top: 32px;
 }
 
-.button{
-    background-color: #4f4341;
-    color: #FFFFFF;
-    font-size: 16px;
-    font-weight: bold;
-    border: 0;
-    border-radius: 6px;
-    height: 48px;
-    padding: 0 32px;
+.button {
+  background-color: #4f4341;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  border: 0;
+  border-radius: 6px;
+  height: 48px;
+  padding: 0 32px;
 
-    transition: filter 0.2s;
+  transition: filter 0.2s;
 }
 
-.button:not(:disabled):hover{
-    filter: brightness(0.8);
+.button:not(:disabled):hover {
+  filter: brightness(0.8);
 }
 
-.answer:disabled{
-    cursor: not-allowed;
+.answer:disabled {
+  cursor: not-allowed;
 }
 
-.final-message{
-    font-size: 20px;
-    text-align: center;
+.final-message {
+  font-size: 20px;
+  text-align: center;
 }
 
-.final-message span{
-    display: block;
-    margin-top: 8px;
+.final-message span {
+  display: block;
+  margin-top: 8px;
 }
 
-.hide{
-    display: none;
+.hide {
+  display: none;
 }
 
 .correct {
-    background-color: #049b48;
+  background-color: #049b48;
 }
 
 .incorrect {
-    background-color: #a10101;
+  background-color: #a10101;
 }
 
 .hello {
@@ -197,7 +196,7 @@ body{
 
 .hello h3 {
   color: #695c5a;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 20px;
   margin-bottom: 0;
 }
@@ -206,4 +205,3 @@ body{
   color: #695c5a;
   font-weight: bold;
 }
-

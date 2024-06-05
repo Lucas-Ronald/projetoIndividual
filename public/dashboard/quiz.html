@@ -1,280 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JesusVive | Quiz</title>
-    <link rel="stylesheet" href="../css/styleQuiz.css">
-    <link rel="icon" href="../assets/img/people.png">
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JesusVive | Quiz</title>
+  <link rel="stylesheet" href="../css/styleQuiz.css" />
+  <link rel="icon" href="../assets/img/people.png" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
 </head>
+
 <body>
-    <header id="header">
-        <div class="container-header">
-          <div class="flex">
-            <a href="#"
-              ><img
-                src="../assets/img/people.png"
-                class="logo-jesus"
-                alt="jesusLogo"
-            /></a>
-  
-            <nav>
-              <ul>
-                <li><a href="./histórias.html">Histórias</a></li>
-                <li><a href="./quiz.html">Quiz</a></li>
-                <li><a href="#">Mensagem</a></li>
-                <li><a href="./dashboard.html">Dashboard</a></li>
-              </ul>
-            </nav>
-  
-            <div class="hello">
-              <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-          </div>
-          </div>
+  <header id="header">
+    <div class="container-header">
+      <div class="flex">
+        <a href="#"><img src="../assets/img/people.png" class="logo-jesus" alt="jesusLogo" /></a>
+
+        <nav>
+          <ul>
+            <li><a href="./histórias.html">Histórias</a></li>
+            <li><a href="./quiz.html">Quiz</a></li>
+            <li><a href="#">Mensagem</a></li>
+            <li><a href="./dashboard.html">Dashboard</a></li>
+          </ul>
+        </nav>
+
+        <div class="hello">
+          <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
         </div>
-      </header>
-  
-    <div class="container">
-        <div class="questions-container hide">
-            <span class="question">Pergunta aqui?</span>
-            <div class="answers-container">
-                <button class="answer button">Resposta 1</button>
-                <button class="answer button">Resposta 2</button>
-                <button class="answer button">Resposta 3</button>
-                <button class="answer button">Resposta 4</button>
-            </div>
-        </div>
-        <div class="controls-container">
-            <button class="start-quiz button">Começar quiz!</button>
-            <button class="next-question button hide">Próxima pergunta</button>
-        </div>
+      </div>
     </div>
+  </header>
+
+  <div class="container">
+    <div class="questions-container hide">
+      <span class="question">Pergunta aqui?</span>
+      <div class="answers-container">
+        <button class="answer button">Resposta 1</button>
+        <button class="answer button">Resposta 2</button>
+        <button class="answer button">Resposta 3</button>
+        <button class="answer button">Resposta 4</button>
+      </div>
+    </div>
+    <div class="controls-container">
+      <button class="start-quiz button">Começar quiz!</button>
+      <button class="next-question button hide">Próxima pergunta</button>
+    </div>
+  </div>
 </body>
+
 </html>
 
 <script>
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+  b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+  const nomeUsuario = sessionStorage.NOME_USUARIO;
+  const startGameButton = document.querySelector(".start-quiz");
+  const questionsContainer = document.querySelector(".questions-container");
+  const answersContainer = document.querySelector(".answers-container");
+  const questionText = document.querySelector(".question");
+  const nextQuestionButton = document.querySelector(".next-question");
 
-    const startGameButton = document.querySelector(".start-quiz")
-    const questionsContainer = document.querySelector(".questions-container")
-    const answersContainer = document.querySelector(".answers-container")
-    const questionText = document.querySelector(".question")
-    const nextQuestionButton = document.querySelector(".next-question")
+  startGameButton.addEventListener("click", startGame);
+  nextQuestionButton.addEventListener("click", displayNextQuestion);
 
+  let currentQuestionIndex = 0;
+  let totalCorrect = 0;
 
-    startGameButton.addEventListener("click", startGame)
-    nextQuestionButton.addEventListener("click", displayNextQuestion)
+  function startGame() {
+    startGameButton.classList.add("hide");
+    questionsContainer.classList.remove("hide");
+    displayNextQuestion();
+  }
 
-    let currentQuestionIndex = 0
-    let totalCorrect = 0
+  function displayNextQuestion() {
+    resetState();
 
-    function startGame() {
-        startGameButton.classList.add("hide")
-        questionsContainer.classList.remove("hide")
-        displayNextQuestion()
+    if (questions.length == currentQuestionIndex) {
+      return finishGame();
     }
 
-    function displayNextQuestion(){
-        resetState()
+    questionText.textContent = questions[currentQuestionIndex].question;
+    questions[currentQuestionIndex].answers.forEach((answers) => {
+      const newAnswer = document.createElement("button");
+      newAnswer.classList.add("button", "answer");
+      newAnswer.textContent = answers.text;
+      if (answers.correct) {
+        newAnswer.dataset.correct = answers.correct;
+      }
+      answersContainer.appendChild(newAnswer);
 
-        if(questions.length == currentQuestionIndex){
-            return finishGame()
-        }
+      newAnswer.addEventListener("click", selectAnswer);
+    });
+  }
 
-        questionText.textContent = questions[currentQuestionIndex].question
-        questions[currentQuestionIndex].answers.forEach(answers => {
-            const newAnswer = document.createElement("button")
-            newAnswer.classList.add("button", "answer")
-            newAnswer.textContent = answers.text
-            if(answers.correct) {
-                newAnswer.dataset.correct = answers.correct
-            }
-            answersContainer.appendChild(newAnswer)
-
-            newAnswer.addEventListener("click", selectAnswer)
-        })
+  function resetState() {
+    while (answersContainer.firstChild) {
+      answersContainer.removeChild(answersContainer.firstChild);
     }
 
-    function resetState(){
-        while(answersContainer.firstChild){
-            answersContainer.removeChild(answersContainer.firstChild)
-        }
+    document.body.removeAttribute("class");
+    nextQuestionButton.classList.add("hide");
+  }
 
+  function selectAnswer(event) {
+    const answerClicked = event.target;
 
-        document.body.removeAttribute("class")
-        nextQuestionButton.classList.add("hide")
+    if (answerClicked.dataset.correct) {
+      totalCorrect++;
     }
 
-    function selectAnswer(event){
-        const answerClicked = event.target
+    document.querySelectorAll(".answer").forEach((button) => {
+      if (button.dataset.correct) {
+        button.classList.add("correct");
+      } else {
+        button.classList.add("incorrect");
+      }
 
-        if(answerClicked.dataset.correct){
-            totalCorrect++
-         }
+      button.disabled = true;
+    });
 
-        document.querySelectorAll(".answer").forEach (button => {
-            if(button.dataset.correct){
-                button.classList.add("correct")
-            } else {
-                button.classList.add("incorrect")
-            }
+    nextQuestionButton.classList.remove("hide");
+    currentQuestionIndex++;
+  }
 
-            button.disabled = true
-        })
+  function finishGame() {
+    const totalQuestion = questions.length;
+    const performance = Math.floor((totalCorrect * 100) / totalQuestion);
 
-        nextQuestionButton.classList.remove("hide")
-        currentQuestionIndex++
+    let message;
+
+    if (performance >= 90) {
+      message = "Seu desempenho é excelente! Continue assim!";
+    } else if (performance >= 70) {
+      message = "Você está se saindo muito bem. Parabéns!";
+    } else if (performance >= 50) {
+      message = "Seu desempenho é bom, mas pode melhorar.";
+    } else {
+      message = "Seu desempenho poderia ser melhor. Não desanime, volte e estude mais um pouco.";
     }
 
-    function finishGame(){
-        const totalQuestion = questions.length
-        const performance = Math.floor(totalCorrect * 100 / totalQuestion)
-
-        let mensage = ""
-
-        switch (true) {
-            case(performance >= 90):
-            message = "Excelente :)"
-            break
-            case(performance >=70):
-            message = "Muito bom :)"
-            break
-            case(performance >= 50):
-            message = "Bom"
-            break
-            default:
-                message = "Pode melhorar :("
-        }
-
-        questionsContainer.innerHTML =
-        `
+    questionsContainer.innerHTML = `
         <p class = "final-message">
+          Olá ${nomeUsuario}<br>
             Você acertou ${totalCorrect} de ${totalQuestion} questões!
-            <span>Resultado: ${message}</span>
+            <span>${message}</span>
         </p>
         <button onclick=window.location.reload() class = "button">
             Refazer teste
         </button>
-        `
+        `;
 
-        const username = sessionStorage.NOME_USUARIO;
+    const username = sessionStorage.NOME_USUARIO;
     if (username) {
-        fetch('/usuarios/registrarAcertos', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                usuarioServer: username,
-                acertosServer: totalCorrect,
-            })
-        }).then(response => {
-            if (!response.ok) {
-                console.error('Erro ao registrar os acertos');
-            } else {
-                console.log('Acertos registrados com sucesso');
-            }
-        }).catch(error => {
-            console.error('Erro ao fazer a requisição', error);
+      fetch("/usuarios/registrarAcertos", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          usuarioServer: username,
+          acertosServer: totalCorrect,
+        }),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            console.error("Erro ao registrar os acertos");
+          } else {
+            console.log("Acertos registrados com sucesso");
+          }
+        })
+        .catch((error) => {
+          console.error("Erro ao fazer a requisição", error);
         });
     } else {
-        console.error('Nome de usuário não encontrado');
+      console.error("Nome de usuário não encontrado");
     }
-    }
+  }
 
-
-    const questions = [
-      {
-        question: "Onde Jesus nasceu?",
-        answers: [
-          { text: "Belém", correct: true },
-          { text: "Nazaré", correct: false },
-          { text: "Jerusalém", correct: false },
-          { text: "Jericó", correct: false }
-        ]
-      },
-      {
-        question: "Qual era a profissão de Jesus antes de começar seu ministério?",
-        answers: [
-          { text: "Pescador", correct: false },
-          { text: "Agricultor", correct: false },
-          { text: "Tecelão", correct: false },
-          { text: "Carpinteiro", correct: true }
-        ]
-      },
-      {
-        question: "Quantos discípulos Jesus escolheu para serem seus apóstolos?",
-        answers: [
-          { text: "10", correct: false },
-          { text: "12", correct: true },
-          { text: "7", correct: false },
-          { text: "5", correct: false }
-        ]
-      },
-      {
-        question: "Quem negou Jesus três vezes antes do galo cantar?",
-        answers: [
-          { text: "Tiago", correct: false },
-          { text: "João", correct: false },
-          { text: "Pedro", correct: true },
-          { text: "André", correct: false }
-        ]
-      },
-      {
-        question: "Quantos dias Jesus passou no deserto sendo tentado por Satanás?",
-        answers: [
-          { text: "7 dias", correct: false },
-          { text: "12 dias", correct: false },
-          { text: "40 dias", correct: true },
-          { text: "20 dias", correct: false }
-        ]
-      },
-      {
-        question: "Qual foi a primeira tentação de Jesus no deserto?",
-        answers: [
-          { text: "Pular do pináculo do templo", correct: false },
-          { text: "Adorar Satanás em troca de poder", correct: false },
-          { text: "Converter água em vinho", correct: false },
-          { text: "Transformar pedras em pães", correct: true }
-        ]
-      },
-      {
-        question: "Onde Jesus realizou seu primeiro milagre?",
-        answers: [
-          { text: "No templo em Jerusalém", correct: false },
-          { text: "Em um casamento em Caná da Galileia", correct: true },
-          { text: "À beira do Mar da Galileia", correct: false },
-          { text: "Em uma sinagoga em Nazaré", correct: false }
-        ]
-      },
-      {
-        question: "Qual foi a última refeição de Jesus com seus discípulos antes de sua crucificação?",
-        answers: [
-          { text: "Almoço", correct: false },
-          { text: "Ceia", correct: true },
-          { text: "Café da manhã", correct: false },
-          { text: "Jantar", correct: false }
-        ]
-      },
-      {
-        question: "Quem foi enviado para anunciar o nascimento de Jesus a Maria?",
-        answers: [
-          { text: "O anjo Gabriel", correct: true },
-          { text: "O profeta Isaías", correct: false },
-          { text: "O rei Herodes", correct: false },
-          { text: "O sumo sacerdote Caifás", correct: false }
-        ]
-      },
-      {
-        question: "Qual dos discípulos de Jesus duvidou de sua ressurreição até ver Jesus com seus próprios olhos?",
-        answers: [
-          { text: "Tomé", correct: true },
-          { text: "Pedro", correct: false },
-          { text: "João", correct: false },
-          { text: "André", correct: false }
-        ]
-      }
-    ];
+  const questions = [
+    {
+      question: "Onde Jesus nasceu?",
+      answers: [
+        { text: "Belém", correct: true },
+        { text: "Nazaré", correct: false },
+        { text: "Jerusalém", correct: false },
+        { text: "Jericó", correct: false },
+      ],
+    },
+    {
+      question:
+        "Qual era a profissão de Jesus antes de começar seu ministério?",
+      answers: [
+        { text: "Pescador", correct: false },
+        { text: "Agricultor", correct: false },
+        { text: "Tecelão", correct: false },
+        { text: "Carpinteiro", correct: true },
+      ],
+    },
+    {
+      question: "Quantos discípulos Jesus escolheu para serem seus apóstolos?",
+      answers: [
+        { text: "10", correct: false },
+        { text: "12", correct: true },
+        { text: "7", correct: false },
+        { text: "5", correct: false },
+      ],
+    },
+    {
+      question: "Quem negou Jesus três vezes antes do galo cantar?",
+      answers: [
+        { text: "Tiago", correct: false },
+        { text: "João", correct: false },
+        { text: "Pedro", correct: true },
+        { text: "André", correct: false },
+      ],
+    },
+    {
+      question:
+        "Quantos dias Jesus passou no deserto sendo tentado por Satanás?",
+      answers: [
+        { text: "7 dias", correct: false },
+        { text: "12 dias", correct: false },
+        { text: "40 dias", correct: true },
+        { text: "20 dias", correct: false },
+      ],
+    },
+    {
+      question: "Qual foi a primeira tentação de Jesus no deserto?",
+      answers: [
+        { text: "Pular do pináculo do templo", correct: false },
+        { text: "Adorar Satanás em troca de poder", correct: false },
+        { text: "Converter água em vinho", correct: false },
+        { text: "Transformar pedras em pães", correct: true },
+      ],
+    },
+    {
+      question: "Onde Jesus realizou seu primeiro milagre?",
+      answers: [
+        { text: "No templo em Jerusalém", correct: false },
+        { text: "Em um casamento em Caná da Galileia", correct: true },
+        { text: "À beira do Mar da Galileia", correct: false },
+        { text: "Em uma sinagoga em Nazaré", correct: false },
+      ],
+    },
+    {
+      question:
+        "Qual foi a última refeição de Jesus com seus discípulos antes de sua crucificação?",
+      answers: [
+        { text: "Almoço", correct: false },
+        { text: "Ceia", correct: true },
+        { text: "Café da manhã", correct: false },
+        { text: "Jantar", correct: false },
+      ],
+    },
+    {
+      question: "Quem foi enviado para anunciar o nascimento de Jesus a Maria?",
+      answers: [
+        { text: "O anjo Gabriel", correct: true },
+        { text: "O profeta Isaías", correct: false },
+        { text: "O rei Herodes", correct: false },
+        { text: "O sumo sacerdote Caifás", correct: false },
+      ],
+    },
+    {
+      question:
+        "Qual dos discípulos de Jesus duvidou de sua ressurreição até ver Jesus com seus próprios olhos?",
+      answers: [
+        { text: "Tomé", correct: true },
+        { text: "Pedro", correct: false },
+        { text: "João", correct: false },
+        { text: "André", correct: false },
+      ],
+    },
+    {
+      question:
+        "Quantas vezes Jesus multiplicou pães e peixes para alimentar a multidão?",
+      answers: [
+        { text: "1 vez", correct: false },
+        { text: "2 vezes", correct: true },
+        { text: "3 vezes", correct: false },
+        { text: "4 vezes", correct: false },
+      ],
+    },
+    {
+      question:
+        "Qual foi a reação das autoridades judaicas e romanas em relação às pregações de Jesus?",
+      answers: [
+        { text: "Elas apoiaram Jesus", correct: false },
+        { text: "Elas ignoraram Jesus", correct: false },
+        { text: "Elas o consideraram um curandeiro", correct: false },
+        { text: "Elas ficaram incomodadas com Jesus", correct: true },
+      ],
+    },
+    {
+      question:
+        "Por que Maria e José retornaram à sua cidade natal antes do nascimento de Jesus?",
+      answers: [
+        { text: "Para celebrar uma festa religiosa", correct: false },
+        { text: "Para fugir do rei Herodes", correct: true },
+        {
+          text: "Por causa de um censo realizado pelo Império Romano",
+          correct: false,
+        },
+        { text: "Para visitar familiares", correct: false },
+      ],
+    },
+    {
+      question:
+        "Qual dos apóstolos de Jesus é conhecido como 'o discípulo amado'?",
+      answers: [
+        { text: "Pedro", correct: false },
+        { text: "Tiago", correct: false },
+        { text: "João", correct: true },
+        { text: "André", correct: false },
+      ],
+    },
+    {
+      question:
+        "Qual dos discípulos de Jesus cortou a orelha de um servo do sumo sacerdote durante a prisão de Jesus no Getsêmani?",
+      answers: [
+        { text: "Simão Pedro", correct: true },
+        { text: "Tiago", correct: false },
+        { text: "João", correct: false },
+        { text: "Tomé", correct: false },
+      ],
+    },
+  ];
 </script>
