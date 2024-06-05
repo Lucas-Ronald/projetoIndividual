@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="../../css/stylepágina.css" />
+
+  <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <header id="header">
+    <div class="container">
+
+      <div class="flex-header">
+
+        <a href="./index.html"><img src="../../assets/img/people.png" class="logo-jesus" alt="jesusLogo"></a>
+
+        <nav>
+          <ul>
+            <li><a href="../histórias.html">Histórias</a></li>
+            <li><a href="../quiz.html">Quiz</a></li>
+            <li><a>Mensagem</a></li>
+            <li><a href="../dashboard.html">Dashboard</a></li>
+          </ul>
+        </nav>
+
+        <div class="hello">
+          <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <section class="banner"
+    style="background-image: url('https://curiosamente.diariodepernambuco.com.br/wp-content/uploads/2017/08/jesus-paes-peixes-giovanni-lanfranco.jpg');"
+    <div class="flex">
+    <div class="txt-topo-site">
+      <h1>
+        CRUCIFICAÇÃO E<br>
+        RESSURREIÇÃO.
+      </h1>
+      <div class="btn-sobre-nos">
+        <a onclick="mostrarMensagem(); scrollToSection(881)">
+          <button>Ler história</button>
+        </a>
+      </div>
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <div id="div_mensagem" style="display: none;">
+    <div class="Quem-foi-jesus" id="ParteHistoria">
+      <section class="Quem-foi-Jesus">
+        <div class="txt-quem-foi-jesus-titulo">
+          <h2>Crucificação e ressurreição</h2>
+        </div>
+        <div class="flex">
+          <div class="txt-quem-foi-jesus">
+            <p>
+              Uma das histórias mais marcantes sobre Jesus é o relato da sua crucificação e ressurreição. Esses eventos
+              não apenas são centrais para a fé cristã, mas também têm ressonância e significado profundos em várias
+              tradições religiosas e culturais ao redor do mundo.
+            </p>
+            <p>
+              Jesus foi preso, julgado e condenado à crucificação pelos líderes religiosos da época, que o consideravam
+              uma ameaça à sua autoridade e tradição. Ele foi açoitado, coroado com espinhos e obrigado a carregar sua
+              própria cruz até o local da execução, o Calvário, ou Gólgota. Lá, ele foi pregado na cruz ao lado de dois
+              criminosos.
+            </p>
+            <p>
+              Enquanto agonizava na cruz, Jesus foi insultado e zombado por aqueles que passavam. No entanto, mesmo em
+              meio à sua própria dor e sofrimento, ele demonstrou compaixão, perdoando aqueles que o crucificaram e
+              prometendo o paraíso a um dos criminosos arrependidos ao seu lado.
+            </p>
+            <p>
+              Após horas de agonia, Jesus finalmente entregou seu espírito e morreu. Sua morte foi acompanhada por um
+              terremoto e pela escuridão que cobriu a terra. O véu do templo rasgou-se ao meio, simbolizando a abertura
+              do caminho para a comunhão direta com Deus.
+            </p>
+            <p>
+              O corpo de Jesus foi colocado em um sepulcro e uma grande pedra foi colocada em sua entrada. No entanto,
+              no terceiro dia após sua morte, as mulheres que foram ao túmulo para ungir o corpo de Jesus descobriram
+              que a pedra havia sido removida e o túmulo estava vazio. Um anjo lhes anunciou: "Por que vocês estão
+              procurando entre os mortos aquele que vive? Ele não está aqui; ressuscitou!"
+            </p>
+            <p>
+              Nos dias que se seguiram, Jesus apareceu a seus discípulos várias vezes, confirmando sua ressurreição e
+              dando-lhes instruções para espalhar sua mensagem pelo mundo. Sua ressurreição não apenas confirmou sua
+              divindade, mas também trouxe esperança e salvação para todos os que creem nele.
+            </p>
+            <p>
+              A história da crucificação e ressurreição de Jesus é uma fonte de inspiração e conforto para milhões de
+              pessoas em todo o mundo. Ela nos lembra do poder do amor sobre o ódio, da vida sobre a morte, e da
+              esperança que encontramos na fé.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container-footer">
+        <ul>
+          <h3>
+            Jesus Vive
+          </h3>
+          <p>Porque Deus amou o mundo de tal maneira<br>
+            que deu o seu Filho unigênito,<br>
+            para que todo aquele que nele crê não pereça,<br>
+            mas tenha a vida eterna.</p>
+          <div class="redes-sociais">
+            <img src="../assets/img/instagram.png" alt="instagram">
+            <img src="../assets/img/linkedin.png" alt="linkedin">
+            <img src="../assets/img/github.png" alt="github">
+          </div>
+        </ul>
+
+        <ul>
+          <h3>Link</h3>
+          <li><a onclick="scrollToSection(0)">História</a></li>
+          <li><a onclick="scrollToSection(1814)">Quiz</a></li>
+          <li><a onclick="scrollToSection(3749)">Mensagem</a></li>
+        </ul>
+
+        <ul>
+          <h3>Nos contate</h3>
+          <li>
+            <p>+55 (11) 96803-1688</p>
+          </li>
+          <li>
+            <p>ronald2020xx@gmail.com</p>
+          </li>
+          <li>
+            <p>Brasil</p>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
+
+<script>
+  b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+
+  function mostrarMensagem() {
+    var divMensagem = document.getElementById("div_mensagem");
+    if (divMensagem) { // Verifica se o elemento foi encontrado
+      divMensagem.style.display = "block";
+    } else {
+      console.error("Elemento com ID 'div_mensagem' não encontrado.");
+    }
+  }
+
+
+  window.addEventListener("scroll", function () {
+    let header = document.querySelector('#header')
+    header.classList.toggle('rolagem', window.scrollY > 550)
+  })
+
+  function scrollToSection(to) {
+    window.scrollTo(0, to);
+  };
+
+</script>

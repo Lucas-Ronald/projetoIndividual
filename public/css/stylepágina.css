@@ -157,7 +157,7 @@ section.banner {
 .Quem-foi-jesus {
   display: flex;
   width: 100%; 
-  height: 100vh; 
+  height: auto; 
   background-color: #ffffff;
   justify-content: center;
 }
@@ -255,7 +255,6 @@ footer .container-footer a:hover {
 
 .hello {
   text-align: center;
-  margin-top: 20px;
   background-color: #ffffff;
   border-radius: 5px;
   padding: 15px;
