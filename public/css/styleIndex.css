@@ -47,6 +47,7 @@ header.rolagem a {
 
 header ul {
   list-style-type: none;
+  cursor: pointer;
 }
 
 header ul li {
