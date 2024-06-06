@@ -32,7 +32,7 @@ function contarUsuarios() {
 
 function registrarAcertos(usuario, acertos) {
     var instrucaoSql = `
-        INSERT INTO ranking (fkUsuario, fkQuiz, data, pontuacao) VALUES ('${usuario}', 1, NOW(), ${acertos});
+        INSERT INTO ranking (fkUsuario, fkQuiz, dtQuiz, pontuacao) VALUES ('${usuario}', 1, NOW(), ${acertos});
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
