@@ -137,22 +137,30 @@
     const senha = input_password.value;
     const termos = input_termos.checked;
 
+    const VALIDACAO = {
+      camposVazio: `<p style='text-align: center;'>Preencha todos os campos</p>`,
+      emailInválido: `<p style='text-align: center;'>Email inválido</p>`,
+      senhaInválida: `Senha precisa ter no minimo 6 caracteres`,
+      termos: `<p style='text-align: center;'>Você deve aceitar os termos</p>`,
+      cadastroRealizado: `<p style="text-align: center; color: #5f4336; background-color: #ffffff;">Cadastro realizado com sucesso!</p>`
+    }
+
     if (email == "" || senha == "" || usuario == "") {
       div_mensagem.classList.remove("disabled");
       div_mensagem.classList.add("erro");
-      div_mensagem.innerHTML = `<p style='text-align: center;'>Preencha todos os campos</p>`;
+      div_mensagem.innerHTML = VALIDACAO.camposVazio
     } else if (senha.length < 6) {
       div_mensagem.classList.remove("disabled");
       div_mensagem.classList.add("erro");
-      div_mensagem.innerHTML = `Senha precisa ter no minimo 6 caracteres`;
+      div_mensagem.innerHTML = VALIDACAO.senhaInválida
     } else if (email.indexOf("@") < 0) {
       div_mensagem.classList.remove("disabled");
       div_mensagem.classList.add("erro");
-      div_mensagem.innerHTML = `<p style='text-align: center;'>Email inválido</p>`;
+      div_mensagem.innerHTML = VALIDACAO.emailInválido
     } else if (!termos) {
       div_mensagem.classList.remove("disabled");
       div_mensagem.classList.add("erro");
-      div_mensagem.innerHTML = `<p style='text-align: center;'>Você deve aceitar os termos</p>`;
+      div_mensagem.innerHTML = VALIDACAO.termos
     } else {
       div_mensagem.classList.add("disabled");
 
@@ -176,7 +184,7 @@
           if (resposta.ok) {
             div_mensagem.classList.remove("disabled");
             div_mensagem.classList.add("erro");
-            div_mensagem.innerHTML = `<p style="text-align: center; color: #5f4336; background-color: #ffffff;">Cadastro realizado com sucesso!</p>`;
+            div_mensagem.innerHTML = VALIDACAO.cadastroRealizado
 
             setTimeout(() => {
               location.reload();
@@ -200,10 +208,15 @@
     const usuario = input_usuario_login.value;
     const senha = input_password_login.value;
 
+    const VALIDACAO = {
+      camposVazio: `<p style='text-align: center;'>Preencha todos os campos</p>`,
+      loginRealizado: `<p style="text-align: center; color: #5f4336; background-color: #ffffff;">Login realizado com sucesso!</p>`
+    }
+
     if (senha == "" || usuario == "") {
       div_mensagem_login.classList.remove("disabled");
       div_mensagem_login.classList.add("erro");
-      div_mensagem_login.innerHTML = `<p style='text-align: center;'>Preencha todos os campos</p>`;
+      div_mensagem_login.innerHTML = VALIDACAO.camposVazio
     } else {
       div_mensagem_login.classList.add("disabled");
     }
@@ -226,7 +239,7 @@
 
           div_mensagem_login.classList.remove("disabled");
           div_mensagem_login.classList.add("erro");
-          div_mensagem_login.innerHTML = `<p style="text-align: center; color: #5f4336; background-color: #ffffff;">Login realizado com sucesso!</p>`;
+          div_mensagem_login.innerHTML = VALIDACAO.loginRealizado
 
           resposta.json().then((json) => {
             console.log(json);
